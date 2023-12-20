@@ -19,7 +19,7 @@ export default function InfoSec() {
           feat={[
             "Top Kaggle Expert",
             "Years of Experience in Data Science",
-            "Worked at MNC’s of ZS,Tatras Data & More",
+            "Worked at MNC's of ZS,Tatras Data & More",
           ]}
           linkTo="/speaker"
           buttCont="Meet the Speaker"
@@ -35,7 +35,7 @@ function Course1({title, feat, linkTo, buttCont, image} : {
     buttCont: string,
     image: string
 }) {
-    const listFeat = feat.map((item) => <li className="bg-[#f1eaea] my-2 px-2 border-l-8 border-[--primary-color] rounded-r-md">{item}</li>);
+    const listFeat = feat.map((item, ind) => <li key={ind} className="bg-[#f1eaea] my-2 px-2 border-l-8 border-[--primary-color] rounded-r-md">{item}</li>);
     return (
       <div className="mx-5 my-[100px]">
         <div className="text-5xl text-[rgb(12,141,180)] text-center mb-10">{title}</div>
