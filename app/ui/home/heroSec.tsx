@@ -5,8 +5,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
     const [text] = useTypewriter({
-      words: ['From Projects to Placement'],
-      loop: {},
+      words: ['From Projects to Placement']
       });
     return (
       <div className="max-w-full grid grid-cols-[1fr_1fr] mt-[100px] mb-5 mx-2.5">
