@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #006bac;
+  --secondary-color: rgb(220, 220, 223);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
