@@ -5,7 +5,7 @@ import Section2 from "./ui/home/section2";
 import Section3 from "./ui/home/section3";
 import Section4 from "./ui/home/section4";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <NavMenu />
