@@ -1,20 +1,19 @@
-import Image from 'next/image'
-import SearchBar from './ui/home/searchbar';
-import NavMenu from './ui/home/navbar';
-import HeroSection from './ui/home/heroSec';
-import StatSection from './ui/home/statsSec';
-import UspSection from './ui/home/UspSections';
-import InfoSec from './ui/home/infoSec';
+import NavMenu from "./ui/home/navbar";
+import HeroSection from "./ui/home/heroSec";
+import Section1 from "./ui/home/section1";
+import Section2 from "./ui/home/section2";
+import Section3 from "./ui/home/section3";
+import Section4 from "./ui/home/section4";
 
 export default function Home() {
-  return (<div>
-    <SearchBar />
+  return (
     <div>
       <NavMenu />
       <HeroSection />
-      <StatSection />
-      <UspSection />
-      <InfoSec />
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
     </div>
-  </div>);
+  );
 }

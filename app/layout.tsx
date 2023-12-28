@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { source_sans } from '@/app/ui/fonts'
-import AppLogo from '@/app/ui/logo'
-import UserInfo from '@/app/ui/userInfo'
 import '@/app/ui/globals.css'
 import Footer from './ui/footer';
 
@@ -18,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={source_sans.className}>
-        <AppLogo />
-        <UserInfo isLogin=""/>
+      <body className={source_sans.className + " bg-[#ecf0f2]"}>
         {children}
         <Footer />
       </body>
