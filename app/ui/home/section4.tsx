@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 
 export default function Section4() {
-    return(<div className="my-14 bg-sec4-bg bg-fixed w-full">
+    return(<div className="my-14 bg-sec4-bg md:bg-fixed bg-center w-full">
         <div className="bg-[#007991] bg-opacity-80 full pt-24 px-11 lg:flex justify-evenly">
             <div className="w-full lg:w-4/6 flex flex-col sm:flex-row justify-evenly">
             <Box title="Experience" desp="Lorem ipsum dolor sit amet, consec tetur adipis cing elit. Ut elit tellus, luctus nec ullam corper mattis, pulvinar dapibus. "/>
