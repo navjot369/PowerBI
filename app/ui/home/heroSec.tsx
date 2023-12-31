@@ -1,22 +1,22 @@
 'use client';
 
-import { useTypewriter, Cursor } from 'react-simple-typewriter';
+// import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import Link from 'next/link';
 
 export default function HeroSection() {
-    const [text] = useTypewriter({
-      words: ['From Projects to Placement'],
-      loop: false
-      });
+    // const [text] = useTypewriter({
+    //   words: ['From Projects to Placement'],
+    //   loop: false
+    //   });
     return (
       <div className="w-full rounded-br-[140px] bg-hero-bg-image bg-fixed bg-[center_right] overflow-hidden bg-no-repeat bg-cover">
-        <div className="w-full min-h-[700px] bg-[#007991] bg-opacity-80">
-          <div className="max-w-[1200px] h-[700px] flex items-center p-28">
+        <div className="w-full min-h-[600px] bg-[#007991] bg-opacity-80">
+          <div className="max-w-[1200px] h-[600px] flex items-center p-28">
             <div className="flex flex-col text-white">
-              <div className="text-6xl font-bold my-2"><span>{text}</span><span><Cursor /></span></div>
-              <div className="text-6xl font-bold my-2">With Placed</div>
-              <div className="text-2xl my-9 font-light">Pay only after you are placed above 5LP</div>
-              <div className="my-2"><Link href="/course" className="bg-[#ff9635] text-white text-2xl py-2 px-11 rounded-3xl">Start Course</Link></div>
+              <div className="text-6xl font-bold my-6">From Projects to Placement</div>
+              {/* <div className="text-6xl font-bold my-2">With Placed</div> */}
+              {/* <div className="text-2xl my-9 font-light">Pay only after you are placed above 5LP</div> */}
+              <div className="my-2"><Link href="/program" className="bg-[#ff9635] text-white text-2xl py-2 px-11 rounded-3xl hover:text-[#eee]">Explore</Link></div>
             </div>
           </div>
         </div>

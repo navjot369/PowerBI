@@ -5,8 +5,7 @@ export default function Section6() {
     return(<div className="mx-auto max-w-7xl my-6">
         <div className="flex flex-col w-full sm:flex-row justify-between items-stretch">
             <div className="w-full sm:w-1/2">
-                <div className="font-bold">Testinomials</div>
-                <div className="text-6xl font-bold my-4">Trusted by Thousand of Students and Tutors</div>
+                <div className="text-6xl font-bold my-4">What Our Students Say</div>
             </div>
             <div className="sm:w-1/2 flex justify-center items-center">
                 <div className="text-7xl font-bold text-[#22323d]">4.8</div>

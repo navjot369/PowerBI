@@ -20,7 +20,7 @@ function Box({banner, title, desp, linkSrc} : {
             <Image src={banner} alt="Banner" width={400} height={300} className="w-full h-48 rounded-t-sm" />
         </div>
         <div className="p-4">
-            <div className="text-5xl font-bold">{title}</div>
+            <div className="text-5xl">{title}</div>
             <div className="text-[#555]">{desp}</div>
             <div className="w-full my-4"><Link href={linkSrc} className="w-full block bg-[#428bca] px-2 py-1 my-2 text-center text-[white]">See more...</Link></div>
         </div>
