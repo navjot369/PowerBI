@@ -1,5 +1,5 @@
 export default function Section5() {
-    return(<div className="flex w-full flex-col md:flex-row justify-stretch max-w-6xl m-auto">
+    return(<div className="flex w-full flex-col md:flex-row justify-stretch max-w-7xl m-auto">
         <div className="px-14 flex-grow">
             <div className="font-bold">Features of our course</div>
             <div className="text-5xl my-6 font-bold">Why Choose Us?</div>
