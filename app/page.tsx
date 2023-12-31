@@ -6,12 +6,12 @@ import Section3 from "./ui/home/section3";
 import Section4 from "./ui/home/section4";
 import Section5 from "./ui/home/section5";
 import Section6 from "./ui/home/section6";
-import Section7 from "./ui/home/section7";
 
 export default function Home() {
   return (
     <div>
       <NavMenu />
+      <div className="w-full h-11 bg-[#3292a6]"></div>
       <HeroSection />
       <Section1 />
       <Section2 />
@@ -19,7 +19,6 @@ export default function Home() {
       <Section4 />
       <Section5 />
       <Section6 />
-      <Section7 />
     </div>
   );
 }
