@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from 'next/image';
 import AppLogo from "@/app/ui/logo";
-import clsx from "clsx";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function NavMenu() {
   const [isOpen, setOpen] = useState(false);
-  window.addEventListener('resize', () => {
+  useEffect(() => {
+    window.addEventListener('resize', () => {
     if(window.innerWidth > 936) setOpen(false);
-  } );
+  })});
   return(
     <div>
     <div className="fixed bg-white z-10 flex justify-between items-center px-2 sm:px-11 w-full">
