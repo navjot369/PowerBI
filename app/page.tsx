@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div>
       <NavMenu />
-      <div className="w-full h-11 bg-[#3292a6]"></div>
       <HeroSection />
       <Section1 />
       <Section2 />
