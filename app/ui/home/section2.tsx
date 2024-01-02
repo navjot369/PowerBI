@@ -1,21 +1,29 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Section2() {
-  return (
-    <div className="justify-center my-11 mx-auto">
-      <div className="flex flex-col sm:flex-row w-full mx-auto max-w-6xl items-stretch">
-        <div className="px-11">
-            <div className="text-xl">Top Categories</div>
-            <div className="text-5xl font-bold">Popular Courses</div>
-        </div>
-        <div className="bg-[#ff9635] shrink-0 w-1"></div>
-        <div className="flex flex-col justify-between lg:flex-row px-11 ">
-        <div className="text-xl flex items-center text-[#828181] my-6 sm:my-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum accusantium saepe </div>
-        <div className="flex items-center shrink-0">
-            <Link href="/course/" className="bg-[#ff9635] text-white text-xl py-2 px-6 rounded-3xl no-wrap">View Courses</Link>
-        </div>
-        </div>
-      </div>
-    </div>
-  );
+  return (<div className="mx-auto lg:max-w-6xl flex flex-wrap justify-evenly">
+        <Box banner="/Images/data-science.jpg" title="Data Science MasterClass" desp="Description of the course" linkSrc="/course"  />
+        <Box banner="/Images/data-science.jpg" title="Data Science MasterClass" desp="Description of the course" linkSrc="/course"  />
+        <Box banner="/Images/data-science.jpg" title="Data Science MasterClass" desp="Description of the course" linkSrc="/course"  />
+    </div>);
 }
+
+function Box({banner, title, desp, linkSrc} : {
+    banner: string,
+    title: string,
+    desp: string, 
+    linkSrc: string
+}) {
+    return(<div className="bg-[white] w-[30%] m-2 shadow-lg rounded-sm min-w-[300px]">
+        <div className="">
+            <Image src={banner} alt="Banner" width={400} height={300} className="w-full h-48 rounded-t-sm" />
+        </div>
+        <div className="p-4">
+            <div className="text-5xl">{title}</div>
+            <div className="text-[#555]">{desp}</div>
+            <div className="w-full my-4"><Link href={linkSrc} className="w-full block bg-[#428bca] px-2 py-1 my-2 text-center text-[white]">See more...</Link></div>
+        </div>
+    </div>)
+}
+

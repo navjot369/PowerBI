@@ -1,5 +1,6 @@
 import NavMenu from "./ui/home/navbar";
 import HeroSection from "./ui/home/heroSec";
+import VideoSec from "./ui/home/videoSec";
 import Section1 from "./ui/home/section1";
 import Section2 from "./ui/home/section2";
 import Section3 from "./ui/home/section3";
@@ -12,6 +13,7 @@ export default function Home() {
     <div>
       <NavMenu />
       <HeroSection />
+      <VideoSec />
       <Section1 />
       <Section2 />
       <Section3 />
