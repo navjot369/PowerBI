@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import { open_sans } from '../fonts';
 
 export default function Section6() {
     return(<div className="mx-auto max-w-7xl my-6">
@@ -33,7 +33,7 @@ function Review({title, desp, image} : {
     return(<div className="p-2 pt-16 w-full">
         <div className="bg-white shadow-sm px-10 rounded-xl pb-2 relative">
             <Image src={image} width="100" height="100" className="w-20 h-20 rounded-lg shadow-lg relative bottom-10" alt="profile" />
-            <div className="-mt-4 text-xl text-[#444] font-light">&quot;{desp}&quot;</div>
+            <div className={ open_sans.className + "-mt-4 text-md text-[#444] font-light"}>&quot;{desp}&quot;</div>
             <div className="font-bold text-xl my-6">{title}</div>
             <div className="absolute bottom-0 right-0 tracking-widest text-[#ff9635]">&#9733; &#9733; &#9733; &#9733; &#9733; </div>
         </div>

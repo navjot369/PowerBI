@@ -18,9 +18,9 @@ export default function NavMenu() {
       <div className="flex items-center">
       <div className="hidden min-[936px]:flex items-center flex-row w-fit">
         <Link href="/" className="text-xl hover:text-[#444] px-4">Home</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Programs</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Resources</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
+        <Link href="/program" className="text-xl hover:text-[#444] px-4">Programs</Link>
+        <Link href="/resource" className="text-xl hover:text-[#444] px-4">Resources</Link>
+        <Link href="/team" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
         <Link href="/" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
       </div>
       <div className="px-2 min-[936px]:hidden shrink-0" onClick={() => {setOpen(!isOpen)}}>
@@ -31,9 +31,9 @@ export default function NavMenu() {
       {isOpen && <div className={isOpen ?"fixed min-[936px]:hidden w-full py-4 flex items-centerease-in duration-500 bg-white top-10 z-2" : "top-[-100%]"}>
       <div className="flex items-center flex-col justify-center w-full">
         <Link href="/" className="text-xl hover:text-[#444] px-4">Home</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Programs</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Resources</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
+        <Link href="/program" className="text-xl hover:text-[#444] px-4">Programs</Link>
+        <Link href="/resource" className="text-xl hover:text-[#444] px-4">Resources</Link>
+        <Link href="/team" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
         <Link href="/" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
       </div>
         </div>}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { source_sans } from '@/app/ui/fonts'
+import { poppins } from '@/app/ui/fonts'
 import '@/app/ui/globals.css'
 import Footer from './ui/footer';
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={source_sans.className + " bg-[#ecf0f2]"}>
+      <body className={poppins.className + " bg-[#ecf0f2] box-border"}>
         {children}
         <Footer />
       </body>

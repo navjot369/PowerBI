@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import { open_sans } from '../fonts';
 
 export default function Section4() {
     return(<div className="my-14 bg-sec4-bg md:bg-fixed bg-center w-full">
@@ -11,7 +11,7 @@ export default function Section4() {
             </div>
             <div className="bg-white p-8 w-full sm:w-1/2 lg:w-2/6 my-11 lg:my-0">
                 <div className="text-xl my-4">Potential Meets Opportunity</div>
-                <div className="text-3xl my-6 leading-8">Do you have The Potential But Dont have the opportunity? Placed is For you</div>
+                <div className="text-3xl my-6 leading-8">Do you have The Potential But Don't have the opportunity? Placed is for you</div>
                 <div className=""><Link href="/program" className="">&#x27A4;  Explore</Link></div>
             </div>
         </div>
@@ -25,6 +25,6 @@ function Box({title, desp} : {
     return(<div className="flex w-full my-5 sm:m-0 sm:w-1/3 h-fit flex-col justify-evenly px-4">
         <div className="w-20 h-1 bg-[repeating-linear-gradient(135deg,transparent_0%,transparent_10%,#ff9635_10%,#ff9635_30%)]"></div>
         <div className="text-4xl my-4 text-white">{title}</div>
-        <div className="text-md text-white">{desp}</div>
+        <div className={open_sans.className + "text-md text-white"}>{desp}</div>
     </div>)
 }
