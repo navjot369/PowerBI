@@ -4,6 +4,8 @@ import StatSec from "../ui/program/statSec";
 import CurriculumSec from "../ui/program/curriSec";
 import VideoSec from "../ui/program/videoSec";
 import SpeakerSec from "../ui/program/SpeakerSec";
+import FeatureSec from "../ui/program/featSec";
+import PaymentSec from "../ui/program/paymentSec";
 
 export default function Page() {
     return(<div>
@@ -13,5 +15,7 @@ export default function Page() {
         <CurriculumSec />
         <VideoSec />
         <SpeakerSec />
+        <FeatureSec />
+        <PaymentSec />
     </div>);
 }

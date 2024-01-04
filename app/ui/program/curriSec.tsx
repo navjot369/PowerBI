@@ -7,7 +7,7 @@ const arrList = ["lessons", "hours", "tasks"];
 const arrSrc = ["/Icons/play.svg", "/Icons/time.svg", "Icons/tasks.svg"];
 
 export default function CurriculumSec() {
-    return(<div className="mx-auto my-11 px-2 max-w-6xl">
+    return(<div className="mx-auto my-28 px-2 max-w-6xl">
         <div className="text-center flex flex-col items-center">
             <h3 className="text-5xl font-bold">What you will learn</h3>
             <p className="w-full md:w-2/3 my-6">Tellus nulla lectus faucibus vitae, non sem sollicitudin nunc ipsum volutpat dolor nec facilisis pulvinar mus ut egestas ultrices amet, ridiculus senectus at.</p>
