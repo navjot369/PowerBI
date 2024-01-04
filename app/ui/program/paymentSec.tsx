@@ -105,7 +105,7 @@ function Box({
         <p className="text-slate-500 ml-2 font-bold">{item}</p>
     </div>)
 )
-  return <div className="w-full rounded-2xl overflow-hidden shadow-lg relative pb-24">
+  return <div className="w-full rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
     <div className="bg-[#3091a4] p-6">
         <h3 className="font-bold text-bold">{top}</h3>
         <h3 className="my-4 text-slate-300">{desp}</h3>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { poppins } from '@/app/ui/fonts'
 import '@/app/ui/globals.css'
-import Footer from './ui/footer';
 
 
 export const metadata: Metadata = {
@@ -18,7 +17,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className + " bg-[#ecf0f2] box-border"}>
         {children}
-        <Footer />
       </body>
     </html>
   )
