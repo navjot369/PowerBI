@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'hero-bg-image' : "url('/Images/back-heroSec.jpg')",
-        'sec4-bg' : "url('/Images/background1.jpg')"
+        'sec4-bg' : "url('/Images/background1.jpg')",
+        'get-touch-wall' : "url('/Images/get_in_touch_wallpaper.jpg')"
       },
     },
   },

@@ -21,7 +21,7 @@ export default function NavMenu() {
         <Link href="/program" className="text-xl hover:text-[#444] px-4">Programs</Link>
         <Link href="/resource" className="text-xl hover:text-[#444] px-4">Resources</Link>
         <Link href="/team/hiring_partners" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
+        <Link href="/contact" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
       </div>
       <div className="px-2 min-[936px]:hidden shrink-0" onClick={() => {setOpen(!isOpen)}}>
         {isOpen? <Image src="/Icons/cross.svg" className="w-9" width="50" height="50" alt="Cross"/> :<Image src="/Icons/menu.svg" className="w-9" width="50" height="50" alt="Cross"/>}</div>
@@ -34,7 +34,7 @@ export default function NavMenu() {
         <Link href="/program" className="text-xl hover:text-[#444] px-4">Programs</Link>
         <Link href="/resource" className="text-xl hover:text-[#444] px-4">Resources</Link>
         <Link href="/team/hiring_partners" className="text-xl hover:text-[#444] px-4">Meet the Team</Link>
-        <Link href="/" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
+        <Link href="/contact" className="text-xl hover:text-[#444] px-4">Contact Us</Link>
       </div>
         </div>}
     </div>

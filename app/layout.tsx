@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className + " bg-[#ecf0f2] box-border"}>
+      <body className={poppins.className + " bg-[#ecf0f2] box-border p-0"}>
         {children}
       </body>
     </html>
