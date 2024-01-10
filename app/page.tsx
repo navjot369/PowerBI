@@ -12,7 +12,7 @@ import Footer from "./ui/footer";
 export default function Home() {
   return (
     <div>
-      <NavMenu />
+      <NavMenu login="Navjot Singh"/>
       <HeroSection />
       <VideoSec />
       <Section1 />
