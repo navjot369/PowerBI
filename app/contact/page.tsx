@@ -5,7 +5,7 @@ import Footer from "../ui/footer";
 
 export default function Page() {
     return(<div className="p-0 m-0">
-        <NavMenu />
+        <NavMenu login="Simran"/>
         <TopSec />
         <Sec1 />
         <Footer />
