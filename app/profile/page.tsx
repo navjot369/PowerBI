@@ -6,8 +6,8 @@ import Footer from "../ui/footer";
 export default function Page() {
     const login = "Simrandeep Singh";
     return(<div>
-        <NavMenu login=""/>
-        {login === "" ? 
+        <NavMenu login="Simran"/>
+        {login.length === 0 ? 
         (<div className="w-full h-screen flex items-center justify-center">User not found</div>) :
         (
             <div>

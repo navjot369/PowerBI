@@ -6,7 +6,7 @@ export default function Layout({ children } : {
     children : React.ReactNode
 }) {
     return (<div>
-        <NavMenu />
+        <NavMenu login="Simran"/>
         <TeamNavBar />
         <div className="w-full pt-24"></div>
         { children }

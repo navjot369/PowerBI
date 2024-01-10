@@ -10,7 +10,7 @@ import Footer from "../ui/footer";
 
 export default function Page() {
     return(<div>
-        <NavMenu />
+        <NavMenu login="Simran" />
         <HeroSec />
         <StatSec />
         <CurriculumSec />
