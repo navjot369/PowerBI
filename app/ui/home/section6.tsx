@@ -17,10 +17,10 @@ export default function Section6() {
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2">
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_profile.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_profile.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_profile.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_profile.jpeg"/>
+            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
         </div>
     </div>);
 }
