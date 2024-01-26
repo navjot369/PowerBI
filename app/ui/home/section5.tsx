@@ -2,14 +2,14 @@ import Image from 'next/image';
 import { open_sans } from '../fonts';
 
 export default function Section5() {
-    return(<div className="flex w-full flex-col md:flex-row justify-stretch max-w-7xl m-auto">
-        <div className="px-14 flex-grow">
-            <div className="text-6xl my-6 font-bold text-center">Why Placed?</div>
+    return(<div className="w-full grid grid-cols-[1fr] md:grid-cols-[2fr_3fr] max-w-6xl my-24 mx-auto">
+        <div className="py-12">
+            <div className="text-6xl font-bold text-left">Why Placed?</div>
         </div>
-        <div className="sm:px-14 flex-grow">
+        <div className="px-2">
             <SingleTitle title="100 % Assured Placement" desp="Data Science Courses Backed with 100% Assured placement for you!" source="/Icons/king.svg"/>
+            <SingleTitle title="100% Money Back Guarantee" desp="No questions asked 100%  Money Back guarantee if you are not placed After completing the course" source="/Icons/best-choice.svg"/>
             <SingleTitle title="Data Scientist Within an Year" desp="Become a Data Scientist within an Year and Become Completely Industry Ready for Job Hikes" source="/Icons/clock.svg"/>
-            <SingleTitle title="Learn From The Best" desp="The Course would be Taught by Professional and Experienced data scientists Working in the Domain from years." source="/Icons/best-choice.svg"/>
         </div>
     </div>)
 }

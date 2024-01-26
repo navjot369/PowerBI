@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { open_sans } from '../fonts';
 
 export default function Section6() {
-    return(<div className="mx-auto max-w-7xl my-6">
+    return(<div className="mx-auto max-w-6xl my-6">
         <div className="flex flex-col w-full sm:flex-row justify-between items-stretch">
             <div className="w-full sm:w-1/2">
                 <div className="text-6xl font-bold mx-4 my-4">What Our Students Say</div>
