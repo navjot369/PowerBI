@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-      <div className="bg-white w-full">
+      <div className="bg-white w-full shadow-inner">
       <div className="grid grid-rows-3 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 lg:grid-cols-[3fr_1fr_1fr] gap-11 max-w-6xl mx-auto px-6 py-11">
         <div className="flex flex-col items-center lg:items-start justify-between sm:col-start-1 sm:col-end-3 lg:col-end-2">
           <Image src="/logo.png" width="200" height="200" alt="logo" className=" w-64" />

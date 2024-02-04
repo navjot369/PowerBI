@@ -14,7 +14,7 @@ export default function NavMenu({ login }: { login: string }) {
   });
   return (
     <div>
-      <div className="fixed bg-white z-20 flex items-center justify-between px-2 sm:px-11 w-full">
+      <div className="fixed bg-white z-20 flex items-center justify-between px-2 sm:px-11 w-full top-0 left-0 right-0">
         <AppLogo />
         <div className="flex items-center">
           <div className="hidden min-[1000px]:flex items-center flex-row w-fit">
