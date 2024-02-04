@@ -9,15 +9,15 @@ export default function NavMenu({ login }: { login: string }) {
   const [isOpen, setOpen] = useState(false);
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 936) setOpen(false);
+      if (window.innerWidth > 1000) setOpen(false);
     });
   });
   return (
     <div>
-      <div className="fixed bg-white z-20 flex justify-between items-center px-2 sm:px-11 w-full">
+      <div className="fixed bg-white z-20 flex items-center justify-between px-2 sm:px-11 w-full">
         <AppLogo />
         <div className="flex items-center">
-          <div className="hidden min-[936px]:flex items-center flex-row w-fit">
+          <div className="hidden min-[1000px]:flex items-center flex-row w-fit">
             <Link
               href="/"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
@@ -49,8 +49,9 @@ export default function NavMenu({ login }: { login: string }) {
               Contact Us
             </Link>
           </div>
+          </div>
           <div
-            className="px-2 min-[936px]:hidden shrink-0"
+            className="px-2 min-[1000px]:hidden shrink-0 "
             onClick={() => {
               setOpen(!isOpen);
             }}
@@ -73,30 +74,29 @@ export default function NavMenu({ login }: { login: string }) {
               />
             )}
           </div>
-          {login === "" ? (
+          {login === "not" ? (
             <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
               Login
             </button>
           ) : (
-            <div className="hidden min-[936px]:flex flex-row items-center w-fit">
+            <div className="hidden min-[1000px]:flex flex-row items-center w-fit">
               <Link
                 href="/profile"
-                className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
+                className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4  h-fit hover:bg-white hover:text-[#078181]"
               >
                 Profile
               </Link>
-              <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+              <button className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
                 Sign out
               </button>
             </div>
           )}
         </div>
-      </div>
       {isOpen && (
         <div
           className={
             isOpen
-              ? "fixed min-[936px]:hidden w-full py-4 ease-in flex items-center duration-100 bg-white top-10 z-2"
+              ? "fixed min-[1000px]:hidden w-full py-4 ease-in flex items-center duration-100 bg-white top-10 z-2"
               : "top-[-100%]"
           }
         >
@@ -123,11 +123,11 @@ export default function NavMenu({ login }: { login: string }) {
               <Fragment>
                 <Link
                   href="/profile"
-                  className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
+                  className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 my-2 h-fit hover:bg-white hover:text-[#078181]"
                 >
                   Profile
                 </Link>
-                <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 mt-6 h-fit hovewhiteblack hover:[#078181]white">
+                <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hovewhiteblack hover:[#078181]white">
                   Sign out
                 </button>
               </Fragment>
