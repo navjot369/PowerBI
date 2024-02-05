@@ -8,11 +8,11 @@ export default function ContSmall() {
             <Link href="/resources" className="font-bold group text-slate-700">View More<span className="group-hover:px-2 duration-200"></span> &gt;<span className="px-6 group-hover:px-4 duration-200"></span></Link>
         </div>
         <div className="flex overflow-scroll no-scrollbar py-4">
-            <Box img_src="/Images/data-science.jpg" title="Title" desp="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem " link="/resources" />
-            <Box img_src="/Images/data-science.jpg" title="Title" desp="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem " link="/resources" />
-            <Box img_src="/Images/data-science.jpg" title="Title" desp="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem " link="/resources" />
-            <Box img_src="/Images/data-science.jpg" title="Title" desp="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem " link="/resources" />
-            <Box img_src="/Images/data-science.jpg" title="Title" desp="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem " link="/resources" />
+            <Box img_src="/Images/data-science.jpg" title="Title" desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" link="/resources" />
+            <Box img_src="/Images/data-science.jpg" title="Title" desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" link="/resources" />
+            <Box img_src="/Images/data-science.jpg" title="Title" desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" link="/resources" />
+            <Box img_src="/Images/data-science.jpg" title="Title" desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" link="/resources" />
+            <Box img_src="/Images/data-science.jpg" title="Title" desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" link="/resources" />
         </div>
     </div>);
 }
@@ -27,7 +27,7 @@ function Box({img_src ,title, desp, link} : {
                 <div>
                     <Image src={img_src} width="400" height="300" alt="Document Banner"/>
                     <h3 className="text-xl font-bold p-4">{title}</h3>
-                    <p className="text-md p-4 w-full">{desp}</p>
+                    <p className="text-sm p-4 w-full">{desp}</p>
                 </div>
             </Link>
         </div>);

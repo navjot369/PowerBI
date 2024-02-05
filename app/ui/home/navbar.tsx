@@ -31,7 +31,7 @@ export default function NavMenu({ login }: { login: string }) {
               Programs
             </Link>
             <Link
-              href="/resource"
+              href="/resources"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
             >
               Resources
