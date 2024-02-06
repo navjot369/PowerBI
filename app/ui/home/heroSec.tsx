@@ -14,7 +14,7 @@ export default function HeroSection() {
         <div className="my-8"><Link href="/program" className="bg-[#00807E] text-white text-md sm:text-2xl py-2 px-11 rounded-full border-2 border-[#00807E] hover:bg-[white] hover:text-[#00807E] duration-300">Explore</Link></div>
       </div>
       <div className="w-fill flex justify-center">
-        <Image className="w-full" src="/Images/heroSecGroup.svg" width="600" height="400" alt="Hero Section" />
+        <Image className="w-full" src="/Images/heroSecGroup.png" width="600" height="400" alt="Hero Section" />
       </div>
     </div>
   </div>);

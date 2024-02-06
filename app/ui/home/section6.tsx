@@ -8,7 +8,7 @@ export default function Section6() {
                 <div className="text-6xl font-bold mx-4 my-4">What Our Students Say</div>
             </div>
             <div className="sm:w-1/2 flex justify-end items-center">
-                    <Image className="h-72" src="/Images/testimonial-sec-pic.svg" width="400" height="400" alt="SVG"/>
+                    <Image className=" h-72" src="/Images/testinomial-sec-pic.png" width="300" height="400" alt="SVG"/>
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
