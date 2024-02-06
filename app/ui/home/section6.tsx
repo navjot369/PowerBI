@@ -12,10 +12,10 @@ export default function Section6() {
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Emma Hall" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
         </div>
     </div>);
 }
@@ -26,7 +26,7 @@ function Review({title, desp, image} : {
     image: string
 }) {
     return(<div className="p-2 pt-4 w-full">
-        <div className="bg-white px-10 rounded-lg p-1 pb-6 relative shadow-[4px_4px_10px_4px] shadow-[#D1554B]">
+        <div className="bg-white px-10 rounded-lg p-1 pb-6 relative shadow-[4px_4px_10px_0px] shadow-[#00807E]">
             <div className="flex justify-start items-end my-4">
             <Image src={image} width="100" height="100" className="w-16 h-16 mr-4 rounded-full shadow-lg" alt="profile" />
             <div className="font-bold text-3xl">{title}</div>
