@@ -25,11 +25,13 @@ function Review({title, desp, image} : {
     desp: string,
     image: string
 }) {
-    return(<div className="p-2 pt-16 w-full">
-        <div className="bg-white px-10 rounded-xl pb-2 relative shadow-[4px_4px_10px_4px] shadow-[#D1554B]">
-            <Image src={image} width="100" height="100" className="w-20 h-20 rounded-lg shadow-lg relative bottom-10" alt="profile" />
+    return(<div className="p-2 pt-4 w-full">
+        <div className="bg-white px-10 rounded-lg p-1 pb-6 relative shadow-[4px_4px_10px_4px] shadow-[#D1554B]">
+            <div className="flex justify-start items-end my-4">
+            <Image src={image} width="100" height="100" className="w-16 h-16 mr-4 rounded-full shadow-lg" alt="profile" />
+            <div className="font-bold text-3xl">{title}</div>
+            </div>
             <div className={ open_sans.className + "-mt-4 text-md text-[#444] font-light"}>&quot;{desp}&quot;</div>
-            <div className="font-bold text-xl my-6">{title}</div>
             <div className="absolute bottom-0 right-0 tracking-widest text-[#ff9635]">&#9733; &#9733; &#9733; &#9733; &#9733; </div>
         </div>
     </div>)

@@ -37,7 +37,7 @@ export default function NavMenu({ login }: { login: string }) {
               Resources
             </Link>
             <Link
-              href="/team/hiring_partners"
+              href="/team"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
             >
               Meet the Team
@@ -111,7 +111,7 @@ export default function NavMenu({ login }: { login: string }) {
               Resources
             </Link>
             <Link
-              href="/team/hiring_partners"
+              href="/team"
               className="text-xl hover:text-[#444] px-4"
             >
               Meet the Team

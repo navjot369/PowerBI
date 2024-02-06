@@ -1,6 +1,5 @@
 import NavMenu from "../ui/home/navbar";
 import WelSec from "../ui/profile/wel_sec";
-import MyCourse from "../ui/profile/myCourses";
 import Footer from "../ui/footer";
 
 export default function Page() {
@@ -12,7 +11,6 @@ export default function Page() {
         (
             <div>
                 <WelSec name={login}/>
-                <MyCourse />
             </div>
         )
     }

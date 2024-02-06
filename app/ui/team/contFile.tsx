@@ -6,7 +6,7 @@ export default function Container({ source, desig, name, desp } : {
     name: string,
     desp: string
 }) {
-    return(<div className="my-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
+    return(<div className="my-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
         <div className="p-4">
             <Image src={source} className="rounded-full w-2/3 aspect-sqaure mx-auto md:w-full" width="500" height="500" alt="Speaker" />
         </div>
