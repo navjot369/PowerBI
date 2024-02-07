@@ -107,7 +107,7 @@ export default function NavMenu({ login }: { login: string }) {
             <Link href="/program" className="text-xl hover:text-[#444] px-4">
               Programs
             </Link>
-            <Link href="/resource" className="text-xl hover:text-[#444] px-4">
+            <Link href="/resources" className="text-xl hover:text-[#444] px-4">
               Resources
             </Link>
             <Link
