@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         'hero-bg-image' : "url('/Images/back-heroSec.jpg')",
         'resource-heroSec' : "url('/Images/background1.jpg')",
+        'program-background' : "url('/Images/get_in_touch_wallpaper.jpg')",
         'sec4-bg' : "url('/Images/background1.jpg')",
         'get-touch-wall' : "url('/Images/get_in_touch_wallpaper.jpg')"
       },

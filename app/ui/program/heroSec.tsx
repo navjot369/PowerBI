@@ -1,7 +1,12 @@
 export default function HeroSec() {
-  return(<div className="w-full max-w-6xl pt-40 pb-8 flex flex-col items-center mx-auto text-center">
-    <h1 className="text-6xl font-bold">Power BI Assured</h1>
-    <h4 className="text-3xl font-bold">With Skill Craft</h4>
-    <p className="w-4/5 my-8">You'll learn to create impactful data visualizations, analyze complex datasets, and master advanced Power BI techniques. Gain the skills to make data-driven decisions confidently and propel your career forward.</p>
-  </div>)
+  return(<div className="w-full rounded-br-[140px] bg-program-background bg-fixed bg-[center] overflow-hidden bg-no-repeat bg-cover">
+  <div className="w-full min-h-[500px] bg-[#007991] bg-opacity-80">
+    <div className="max-w-6xl mx-auto h-[500px] flex items-center p-2 min-[820px]:p-11 min-[936px]:p-28">
+      <div className="flex flex-col text-white">
+        <div className="text-5xl min-[630px]:text-6xl font-bold my-2 mt-12">Power BI Assured</div>
+        <div className="text-3xl min-[630px]:text-3xl font-bold my-2">With Skill Craft</div>
+      </div>
+    </div>
+  </div>
+</div>)
 }

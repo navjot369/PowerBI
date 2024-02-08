@@ -10,7 +10,7 @@ export default function CurriculumSec() {
     return(<div className="mx-auto my-20 px-2 max-w-6xl">
         <div className="flex flex-col items-start">
             <h3 className="text-6xl">What you will learn</h3>
-            <p className="w-full md:w-2/3 my-6">Tellus nulla lectus faucibus vitae, non sem sollicitudin nunc ipsum volutpat dolor nec facilisis pulvinar mus ut egestas ultrices amet, ridiculus senectus at.</p>
+            <p className="w-full my-6">You'll learn to create impactful data visualizations, analyze complex datasets, and master advanced Power BI techniques. Gain the skills to make data-driven decisions confidently and propel your career forward.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
             <Box imgSrc="/Images/ecourse-template.jpg" title="Introduction" desp="Quis ultricies vestibulum aliquet dolor scelerisque nibh orci adipiscing consectetur diam vel vulputate felis, pretium sociis imperdiet praesent lorem enim donec porttitor." arr={[4,12,0]} />
