@@ -11,10 +11,6 @@ body {
   background: white;
 }
 
-::selection {
-  background: #007f7f;
-}
-
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
       display: none;

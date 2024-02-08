@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function SpeakerSec() {
     return(<div className="my-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
         <div className="p-4">
-            <Image src="/Images/.jpg" className="rounded-full w-2/3 mx-auto md:w-full" width="500" height="500" alt="Speaker" />
+            <Image src="/Images/PowerBi_sir.png" className="rounded-full w-2/3 mx-auto md:w-full" width="500" height="500" alt="Speaker" />
         </div>
         <div className="flex flex-col items-center md:items-start justify-center px-11">
             <div className="text-5xl font-bold my-2 text-center md:text-left">Mr. Shishir Dhangar</div>
