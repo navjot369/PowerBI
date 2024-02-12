@@ -5,16 +5,16 @@ import {useContext } from 'react';
 import CourseContext from '../contexts';
 
 export default function Page() {
-    const courseData = useContext(CourseContext);
+    const courseData: any = useContext(CourseContext);
     
     return(<div>
-    <Box courseData = {courseData}/>
+    {/* <Box courseData = {courseData}/> */}
     </div>);
 }
 
-
+/*
 function Box({ courseData } : {
-    courseData : object
+    courseData : any
 }){
   return (
     <div>
@@ -41,7 +41,7 @@ function Box({ courseData } : {
             </h3>
             <ul>
               {courseData.modules &&
-                courseData.modules.map((module, moduleIndex) => (
+                courseData.modules.map((module: any, moduleIndex: any) => (
                   <li
                     key={moduleIndex}
                     className="mb-2 bg-blue-500 p-10 rounded-md"
@@ -133,3 +133,4 @@ function Box({ courseData } : {
     </div>
   );
 };
+*/
