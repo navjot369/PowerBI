@@ -1,8 +1,9 @@
 import {createContext} from 'react';
 
-const CourseContext = createContext({
-    module: Array,
-    title: String,
-});
+interface courseObject {
+    title: string,
+    modules: object[]
+}
+const CourseContext = createContext({} as courseObject);
 
 export default CourseContext;
