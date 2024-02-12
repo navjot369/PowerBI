@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AssingmentList({assings, linkLec} : {
-    assings: Array,
+    assings: object[],
     linkLec: string
 }) {
     return(<div className="py-4 ">
