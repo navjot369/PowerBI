@@ -6,7 +6,9 @@ import axios from 'axios';
 
 export default function Layout({children, params} : {
     children : JSX.Element,
-    params: object
+    params: {
+        slug: string
+    }
 }) {
     const [course, setCourse] = useState({});
     useEffect(() => {

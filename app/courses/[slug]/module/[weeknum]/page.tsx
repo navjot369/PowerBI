@@ -5,7 +5,10 @@ import VideoList from '@/app/ui/module/videoLists';
 import AssingmentList from '@/app/ui/module/assignment';
 
 export default function Page({ params }: {
-    params: object
+    params: {
+        slug: string,
+        weeknum: number
+    }
 }) {
     const course = useContext(CourseContext);
     let module = {};
