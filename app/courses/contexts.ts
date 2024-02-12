@@ -4,6 +4,6 @@ interface courseObject {
     title: string,
     modules: object[]
 }
-const CourseContext = createContext({} as courseObject);
+const CourseContext = createContext({title: "", modules: []} as courseObject);
 
 export default CourseContext;
