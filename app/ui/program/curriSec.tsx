@@ -37,7 +37,7 @@ export default function CurriculumSec() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
             {data.courses.length > 0 && 
-            data.courses.map((course, ind) => 
+            data.courses.map((course: any, ind) => 
             (<Box imgSrc="/Images/ecourse-template.jpg" title={course.title} link={`/courses/${course._id}/module/1`} desp={course.description} arr={[4,12,course.modules.length]} />))}
         </div>
     </div>);
