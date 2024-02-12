@@ -1,37 +1,60 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import axios from 'axios';
+import { apiLink } from '@/app/api';
+import {useState, useEffect} from 'react';
+
 
 
 const arrList = ["lessons", "hours", "tasks"];
 const arrSrc = ["/Icons/play.svg", "/Icons/time.svg", "Icons/tasks.svg"];
 
 export default function CurriculumSec() {
+    const [data, setData] = useState({ courses: [] });
+
+    useEffect(() => {
+        const getCourses = async () => {
+            try {
+                const response = await axios.get(apiLink + "/course");
+                setData(response.data);
+            } catch(error) {
+                console.error("Error fetching courses: ", error);
+            }
+        }
+        getCourses();
+    }, []);
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
     return(<div className="mx-auto my-20 px-2 max-w-6xl">
         <div className="flex flex-col items-start">
             <h3 className="text-6xl">What you will learn</h3>
             <p className="w-full my-6">You'll learn to create impactful data visualizations, analyze complex datasets, and master advanced Power BI techniques. Gain the skills to make data-driven decisions confidently and propel your career forward.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
-            <Box imgSrc="/Images/ecourse-template.jpg" title="Introduction" desp="Quis ultricies vestibulum aliquet dolor scelerisque nibh orci adipiscing consectetur diam vel vulputate felis, pretium sociis imperdiet praesent lorem enim donec porttitor." arr={[4,12,0]} />
-            <Box imgSrc="/Images/ecourse-template.jpg" title="The Basics" desp="Quis ultricies vestibulum aliquet dolor scelerisque nibh orci adipiscing consectetur diam vel vulputate felis, pretium sociis imperdiet praesent lorem enim donec porttitor." arr={[3,11,4]} />
-            <Box imgSrc="/Images/ecourse-template.jpg" title="Working with Data" desp="Quis ultricies vestibulum aliquet dolor scelerisque nibh orci adipiscing consectetur diam vel vulputate felis, pretium sociis imperdiet praesent lorem enim donec porttitor." arr={[5,12,3]} />
-            <Box imgSrc="/Images/ecourse-template.jpg" title="Validating" desp="Quis ultricies vestibulum aliquet dolor scelerisque nibh orci adipiscing consectetur diam vel vulputate felis, pretium sociis imperdiet praesent lorem enim donec porttitor." arr={[6,0,2]} />
+            {data.courses.length > 0 && 
+            data.courses.map((course, ind) => 
+            (<Box imgSrc="/Images/ecourse-template.jpg" title={course.title} link={`/courses/${course._id}/module/1`} desp={course.description} arr={[4,12,course.modules.length]} />))}
         </div>
     </div>);
 }
 
-function Box({imgSrc, title, desp, arr} : {
+function Box({imgSrc, title, desp, arr, link} : {
     imgSrc : string,
     title: string,
     desp: string,
-    arr: number[]
+    arr: number[],
+    link: string
 }) {
     let arrTemp :any[] = []
     for(let i = 0; i < 3; i++) {
         if(arr[i] > 0) {
-            arrTemp.push(<Image className="grayscale" src={arrSrc[i]} width="20" height="20" alt="icons" />)
-            arrTemp.push(<span className="text-sm ml-2 mr-4">{arr[i]} {arrList[i]}</span>)
+            arrTemp.push(<Image className="grayscale" src={arrSrc[i]} width="20" height="20" alt="icons" key={"Image-" + i} />)
+            arrTemp.push(<span className="text-sm ml-2 mr-4" key={"span-"+i}>{arr[i]} {arrList[i]}</span>)
         }
     }
     return(<div className="w-full rounded-xl bg-[#f6f6f6] hover:bg-[#f3f5f5] duration-500 border-2 border-[#ddd7d7] hover:shadow-2xl">
@@ -41,12 +64,12 @@ function Box({imgSrc, title, desp, arr} : {
         <div className="p-6">
         <div className="flex justify-between items-center">
             <div>
-            <h3 className="text-4xl font-bold">{title}</h3>
+            <h3 className="text-4xl font-bold mb-4">{title}</h3>
             <div className="flex w-fit flex-row items-center mb-4">
                 {arrTemp}
             </div>
             </div>
-            <div className="flex mx-11 hover:mx-10 justify-center items-center h-11 w-11 text-4xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg ">&gt;</div>
+            <Link href={link} className="flex mx-11 hover:scale-110 justify-center items-center w-14 h-14 text-6xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg ">&gt;</Link>
         </div>
             <div className="text-sm">{desp}</div>
         </div>
