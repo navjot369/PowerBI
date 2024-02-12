@@ -4,14 +4,18 @@ import CourseContext from '@/app/courses/contexts';
 import VideoList from '@/app/ui/module/videoLists';
 import AssingmentList from '@/app/ui/module/assignment';
 
+interface courseObject {
+    title: string,
+    modules: object[]
+}
 export default function Page({ params }: {
     params: {
         slug: string,
         weeknum: number
     }
 }) {
-    const course = useContext(CourseContext);
-    let module = {};
+    const course = useContext(CourseContext) as {title:string, modules: object[]};
+    let module: any;
     let linkLec = "/course/"+ params.slug +"/lecture/";
     if(Object.keys(course).length === 0){
         return(<div className="fixed top-0 left-0 right-0 w-full h-[100vh] font-bold text-3xl flex bg-white justify-center items-center">Loading....</div>);

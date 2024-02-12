@@ -8,7 +8,7 @@ import NavMenu from "@/app/ui/home/navbar";
 export default function Layout({children} : {
     children : JSX.Element
 }) {
-    const course = useContext(CourseContext);
+    const course: any = useContext(CourseContext);
     return(<div>
         <NavMenu login="Simran" />
         <div className="grid grid-cols-[350px_1fr] mt-24 gap-11">
