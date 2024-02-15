@@ -1,5 +1,5 @@
 'use client';
-import {useContext} from 'react';
+import {useState, useContext} from 'react';
 import CourseContext from '@/app/courses/contexts';
 import VideoList from '@/app/ui/module/videoLists';
 import AssingmentList from '@/app/ui/module/assignment';
@@ -16,7 +16,7 @@ export default function Page({ params }: {
 }) {
     const course = useContext(CourseContext) as {title:string, modules: object[]};
     let module: any;
-    let linkLec = "/course/"+ params.slug +"/lecture/";
+    let linkLec = "/courses/"+ params.slug +"/lecture/" + params.weeknum + "/";
     if(Object.keys(course).length === 0){
         return(<div className="fixed top-0 left-0 right-0 w-full h-[100vh] font-bold text-3xl flex bg-white justify-center items-center">Loading....</div>);
     }
@@ -32,11 +32,11 @@ export default function Page({ params }: {
         <h1 className="text-center text-5xl font-bold mb-11">{module.title}</h1>
         <div className="rounded-lg border-2 border-black mx-11 shadow-lg my-2 p-4 overflow-hidden">
         <h3 className="text-3xl border-b-2 border-slate-600 pb-2">Videos</h3>
-        <VideoList videos={module.videos} linkLec={linkLec}/>
+        <VideoList videos={module.videos} linkLec={linkLec+"videos/"}/>
         </div>
         <div className="rounded-lg border-2 border-black mx-11 shadow-lg my-2 p-4 overflow-hidden">
         <h3 className="text-3xl border-b-2 border-slate-600 pb-2">Assignment</h3>
-        <AssingmentList assings={module.assignments} linkLec={linkLec}/>
+        <AssingmentList assings={module.assignments} linkLec={linkLec+"assignment/"}/>
         </div>
     </div>);
 }

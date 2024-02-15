@@ -1,0 +1,87 @@
+import Link from 'next/link';
+import {useState} from 'react';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import Image from 'next/image';
+
+
+export default function SideBar({course, link, isOpen, setOpen} : {
+    course: any,
+    link: string,
+    setOpen: any,
+    isOpen: any
+}) {
+    if(Object.keys(course).length === 0){
+        return(<div className="fixed top-0 left-0 right-0 w-full h-[100vh] font-bold text-3xl flex bg-white justify-center items-center">Loading....</div>);
+    }
+    const path = usePathname();
+    return(<div className={clsx("w-80 fixed bottom-0 top-0 border-r-2 border-r-[#078181] h-screen shadow-lg duration-300", 
+    {"left-0" : isOpen, "left-11 -translate-x-80" : !isOpen})}>
+        <div className="w-full bg-[#078181] px-6 py-6 font-bold text-white text-2xl relative">
+            <span>{course.title}</span>
+            <button className={clsx("absolute right-0 translate-x-1/2 -translate-y-1/2 w-8 rounded-full h-8 flex justify-center items-center duration-300 top-1/2 bg-slate-800", 
+            {"rotate-180": !isOpen})} onClick = {() => setOpen(!isOpen)}>&lt;</button>
+        </div>
+        <div>
+            {course.modules.map((item:any, ind:number) => <Permodule key={ind} module={item} link={link+(ind+1)+"/"} path={path}/>)}
+        </div>
+    </div>);
+}
+
+function Permodule({module, link, path}: {
+    module: any,
+    link: string,
+    path: string
+}) {
+    const [isOpen, setOpen] = useState(path.includes(link));
+    return(<div className="border-[0.4px] border-slate-200">
+        <div className="flex">
+            <div className={clsx("h-4 w-4 rounded-full border-2 my-2 mx-2 duration-300",{"border-[--pc]" : path.includes(link)})}></div>
+            <div className="my-1 text-xl">
+                <Link className={clsx("w-full block", {"text-[--pc]" : path.includes(link)})} href={link+"videos/1"}>{module.title}</Link>
+            <div className="my-1 flex justify-center items-center">
+                <button className={clsx("bg-[--pc] flex justify-center text-white items-center px-1 cursor-default rounded-full w-4 h-4 duration-300",
+                {"rotate-90" : isOpen, "-rotate-90": !isOpen})} onClick={() => setOpen(!isOpen)}>&lt;</button>
+                <span className="mx-4 text-xs">{module.videos.length} Videos</span>
+                <span className="text-xs">{module.assignments.length} Assignments</span>
+            </div>
+        </div>
+        </div>
+        <div className="overflow-hidden relative">
+        <div className={clsx("w-full bg-slate-200 duration-300 py-2",{ "mt-[-100%]" : !isOpen, "mt-0" : isOpen})}>
+        {module.videos.map((item:any, ind:number) => {
+            let linkHere = link+"videos/"+(ind+1);
+            return(<VidLink title={item.title} link={linkHere} path={path} />)
+        })}
+        {module.assignments.map((item:any, ind:number) => {
+            let linkHere = link+"assignment/"+(ind+1);
+            return(<AssignLink title={item.title} link={linkHere} path={path} />)
+        })}
+        </div>
+        </div>
+    </div>);
+
+}
+
+function VidLink({title, link, path} : {
+    title: any,
+    link: string,
+    path: string
+}) {
+    return(<Link href={link} className="w-full flex justify-start items-center group py-2 px-4">
+        <Image className={clsx("w-6 h-6 group-hover:scale-110 duration-75", {"brightness-50" : !path.includes(link)})} src="/Icons/play-video.svg" width="50" height="50" alt="icon" />
+        <span className={clsx("text-sm mx-2", {"text-[--pc]" : path.includes(link)})}>{title}</span>
+    </Link>)
+}
+
+
+function AssignLink({title, link, path} : {
+    title: any,
+    link: string,
+    path: string
+}) {
+    return(<Link href={link} className="w-full flex justify-start items-center group py-2 px-4">
+        <Image className={clsx("mx-1 w-5 h-5 group-hover:scale-110 duration-75", {"brightness-50" : !path.includes(link)})} src="/Icons/assignment.svg" width="50" height="50" alt="icon" />
+        <span className={clsx("text-sm mx-2", {"text-[--pc]" : path.includes(link)})}>{title}</span>
+    </Link>)
+}
