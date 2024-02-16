@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="bg-white w-full shadow-inner">
       <div className="grid grid-rows-3 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 lg:grid-cols-[3fr_1fr_1fr] gap-11 max-w-6xl mx-auto px-6 py-11">
         <div className="flex flex-col items-center lg:items-start justify-between sm:col-start-1 sm:col-end-3 lg:col-end-2">
-          <Image src="/logo.png" width="200" height="200" alt="logo" className=" w-64" />
+          <Image src="/logo.png" width="200" height="150" alt="logo" className="mx-auto py-4 h-56 w-auto" />
           <div className="text-[#555] sm:px-11 lg:px-0 text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</div>
           <div className="flex flex-row">
             <Image src="/Icons/facebook.png" width="50" height="50" className="w-8 h-8 mr-2" alt="Social media Logo"/>

@@ -12,17 +12,17 @@ export default function SideBar({course, link, isOpen, setOpen} : {
     isOpen: any
 }) {
     if(Object.keys(course).length === 0){
-        return(<div className="fixed top-0 left-0 right-0 w-full h-[100vh] font-bold text-3xl flex bg-white justify-center items-center">Loading....</div>);
+        return(<div className="w-0"></div>);
     }
     const path = usePathname();
-    return(<div className={clsx("w-80 fixed bottom-0 top-0 border-r-2 border-r-[#078181] h-screen shadow-lg duration-300", 
+    return(<div className={clsx("w-80 fixed bottom-0 top-0 border-r-2 border-r-[#078181] overflow-x-visible overflow-y-scroll no-scrollbar min-h-fit h-screen shadow-lg duration-300", 
     {"left-0" : isOpen, "left-11 -translate-x-80" : !isOpen})}>
-        <div className="w-full bg-[#078181] px-6 py-6 font-bold text-white text-2xl relative">
+        <div className="sticky z-50 top-0 right-0 left-0 w-full bg-[#078181] px-6 py-6 font-bold text-white text-2xl">
             <span>{course.title}</span>
-            <button className={clsx("absolute right-0 translate-x-1/2 -translate-y-1/2 w-8 rounded-full h-8 flex justify-center items-center duration-300 top-1/2 bg-slate-800", 
+            <button className={clsx("absolute right-2 -translate-y-1/2 w-8 rounded-full text-[--pc] h-8 flex justify-center items-center duration-300 top-1/2 bg-white", 
             {"rotate-180": !isOpen})} onClick = {() => setOpen(!isOpen)}>&lt;</button>
         </div>
-        <div>
+        <div className="pb-24">
             {course.modules.map((item:any, ind:number) => <Permodule key={ind} module={item} link={link+(ind+1)+"/"} path={path}/>)}
         </div>
     </div>);

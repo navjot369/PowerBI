@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  box-sizing: border-box;
+}
 :root {
   --pc: #02817F;
   --secondary-color: rgb(220, 220, 223);

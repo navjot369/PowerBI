@@ -35,11 +35,13 @@ export default function CurriculumSec() {
             <h3 className="text-6xl">What you will learn</h3>
             <p className="w-full my-6">You'll learn to create impactful data visualizations, analyze complex datasets, and master advanced Power BI techniques. Gain the skills to make data-driven decisions confidently and propel your career forward.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
-            {data.courses.length > 0 && 
-            data.courses.map((course: any, ind) => 
-            (<Box imgSrc="/Images/ecourse-template.jpg" title={course.title} link={`/courses/${course._id}/module/1`} desp={course.description} arr={[4,12,course.modules.length]} />))}
-        </div>
+        {data.courses.length > 0?
+            (<div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
+            {data.courses.map((course: any, ind) => 
+            <Box imgSrc="/Images/ecourse-template.jpg" title={course.title} link={`/courses/${course._id}/module/1`} desp={course.description} arr={[4,12,course.modules.length]} />)}
+            </div>)
+            :
+            (<h1 className="w-full text-4xl h-40 font-bold flex justify-center items-center">Loading Content....</h1>)}
     </div>);
 }
 

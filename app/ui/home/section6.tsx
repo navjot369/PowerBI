@@ -12,10 +12,10 @@ export default function Section6() {
             </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
-            <Review title="Simrandeep Singh" desp="Massa amet, at dolor tellus pellentesque aenean in eget massa tincidunt habitasse volutpat adipiscing sed id sit auctor eu vivamus nulla." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="This Power BI course exceeded my expectations - clear, concise, and practical." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Highly recommend this Power BI course for its comprehensive content and hands-on exercises." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="The best investment I made for mastering Power BI - practical insights and expert guidance." image="/Images/Simran_img.jpeg"/>
+            <Review title="Simrandeep Singh" desp="Transformative Power BI course - accelerated my data analytics skills significantly." image="/Images/Simran_img.jpeg"/>
         </div>
     </div>);
 }

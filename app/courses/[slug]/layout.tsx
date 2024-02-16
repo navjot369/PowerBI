@@ -24,10 +24,6 @@ export default function Layout({children, params} : {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        console.log(course);
-    }, [course]);
-
     return(
         <CourseContext.Provider value={course}>
             {children}

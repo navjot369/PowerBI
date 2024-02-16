@@ -11,8 +11,8 @@ export default function Layout({children, params} : {
 }) {
     const course:any = useContext(CourseContext);
     const [sideOpen, setOpen] = useState(true);
-    return(<div className="duration-300">
+    return(<div className="duration-300 w-full box-border">
         <SideBar course={course} link={"/courses/" + params.slug + "/lecture/"} isOpen={sideOpen} setOpen={setOpen}/>
-        <div className={clsx("duration-300", {"ml-80" : sideOpen, "ml-11" : !sideOpen})}>{children}</div>
+        <div className={clsx("duration-300 w-full p-1", {"pl-80" : sideOpen, "pl-11" : !sideOpen})}>{children}</div>
     </div>)
 }
