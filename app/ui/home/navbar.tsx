@@ -30,12 +30,12 @@ export default function NavMenu({ login }: { login: string }) {
             >
               Programs
             </Link>
-            <Link
+            {/* <Link
               href="/resources"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
             >
               Resources
-            </Link>
+            </Link> */}
             <Link
               href="/team"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
@@ -49,49 +49,49 @@ export default function NavMenu({ login }: { login: string }) {
               Contact Us
             </Link>
           </div>
-          </div>
-          <div
-            className="px-2 min-[1000px]:hidden shrink-0 "
-            onClick={() => {
-              setOpen(!isOpen);
-            }}
-          >
-            {isOpen ? (
-              <Image
-                src="/Icons/cross.svg"
-                className="w-9"
-                width="50"
-                height="50"
-                alt="Cross"
-              />
-            ) : (
-              <Image
-                src="/Icons/menu.svg"
-                className="w-9"
-                width="50"
-                height="50"
-                alt="Cross"
-              />
-            )}
-          </div>
-          {login === "not" ? (
-            <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
-              Login
-            </button>
+        </div>
+        <div
+          className="px-2 min-[1000px]:hidden shrink-0 "
+          onClick={() => {
+            setOpen(!isOpen);
+          }}
+        >
+          {isOpen ? (
+            <Image
+              src="/Icons/cross.svg"
+              className="w-9"
+              width="50"
+              height="50"
+              alt="Cross"
+            />
           ) : (
-            <div className="hidden min-[1000px]:flex flex-row items-center w-fit">
-              <Link
-                href="/profile"
-                className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4  h-fit hover:bg-white hover:text-[#078181]"
-              >
-                Profile
-              </Link>
-              <button className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
-                Sign out
-              </button>
-            </div>
+            <Image
+              src="/Icons/menu.svg"
+              className="w-9"
+              width="50"
+              height="50"
+              alt="Cross"
+            />
           )}
         </div>
+        {login === "not" ? (
+          <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+            Login
+          </button>
+        ) : (
+          <div className="hidden min-[1000px]:flex flex-row items-center w-fit">
+            <Link
+              href="/profile"
+              className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4  h-fit hover:bg-white hover:text-[#078181]"
+            >
+              Profile
+            </Link>
+            <button className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+              Sign out
+            </button>
+          </div>
+        )}
+      </div>
       {isOpen && (
         <div
           className={
@@ -110,10 +110,7 @@ export default function NavMenu({ login }: { login: string }) {
             <Link href="/resources" className="text-xl hover:text-[#444] px-4">
               Resources
             </Link>
-            <Link
-              href="/team"
-              className="text-xl hover:text-[#444] px-4"
-            >
+            <Link href="/team" className="text-xl hover:text-[#444] px-4">
               Meet the Team
             </Link>
             <Link href="/contact" className="text-xl hover:text-[#444] px-4">
