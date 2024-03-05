@@ -5,6 +5,7 @@ import Link from "next/link";
 import axios from "axios";
 import { apiLink } from "@/app/api";
 import { useState, useEffect } from "react";
+import { BeatLoader } from "react-spinners";
 
 const arrList = ["lessons", "hours", "tasks"];
 const arrSrc = ["/Icons/play.svg", "/Icons/time.svg", "Icons/tasks.svg"];
@@ -40,7 +41,7 @@ export default function CurriculumSec() {
           make data-driven decisions confidently and propel your career forward.
         </p>
       </div>
-      {data.course.modules.length > 0 ? (
+      {data.course.modules.length > 0? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
           {data.course.modules.map((course: any, ind) => (
             <Box
@@ -57,8 +58,8 @@ export default function CurriculumSec() {
           ))}
         </div>
       ) : (
-        <h1 className="w-full text-4xl h-40 font-bold flex justify-center items-center">
-          Loading Content....
+        <h1 className="w-full text-4xl h-60 font-bold flex justify-center items-center">
+          <BeatLoader loading={true} color="#008080" size={40}/>
         </h1>
       )}
     </div>
