@@ -3,15 +3,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import AppLogo from "@/app/ui/logo";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 
 export default function NavMenu({ login }: { login: string }) {
   const [isOpen, setOpen] = useState(false);
+  const [user, setUser] = useState("");
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1000) setOpen(false);
     });
+    if(localStorage.getItem("user") !== null) {
+      let str = localStorage.getItem("user");
+      if(str == null) str = "";
+      setUser(str);
+    }
   });
+  const handleLogOut = () => {
+    localStorage.removeItem("user");
+    location.reload();
+    setUser("");
+  }
   return (
     <div>
       <div className="fixed bg-white z-20 flex items-center justify-between px-2 sm:px-11 w-full top-0 left-0 right-0">
@@ -74,10 +85,10 @@ export default function NavMenu({ login }: { login: string }) {
             />
           )}
         </div>
-        {login === "not" ? (
-          <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+        {user.length == 0 ? (
+          <Link href='/auth/login' className="hidden text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md min-[1000px]:flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
             Login
-          </button>
+          </Link>
         ) : (
           <div className="hidden min-[1000px]:flex flex-row items-center w-fit">
             <Link
@@ -86,7 +97,7 @@ export default function NavMenu({ login }: { login: string }) {
             >
               Profile
             </Link>
-            <button className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+            <button onClick={handleLogOut} className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
               Sign out
             </button>
           </div>
@@ -107,16 +118,33 @@ export default function NavMenu({ login }: { login: string }) {
             <Link href="/program" className="text-xl hover:text-[#444] px-4">
               Programs
             </Link>
-            <Link href="/resources" className="text-xl hover:text-[#444] px-4">
+            {/* <Link href="/resources" className="text-xl hover:text-[#444] px-4">
               Resources
-            </Link>
+            </Link> */}
             <Link href="/team" className="text-xl hover:text-[#444] px-4">
               Meet the Team
             </Link>
             <Link href="/contact" className="text-xl hover:text-[#444] px-4">
               Contact Us
             </Link>
-            {login !== "" && (
+            {user.length == 0 ? (
+          <Link href='/auth/login' className="text-md my-4 font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]">
+            Login
+          </Link>
+        ) : (
+          <div className="flex flex-col items-center w-fit">
+            <Link
+              href="/profile"
+              className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-xl flex items-center px-4 my-1 h-fit hover:bg-white hover:text-[#078181]"
+            >
+              Profile
+            </Link>
+            <button onClick={handleLogOut} className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-xl flex items-center px-4 my-1 h-fit hover:bg-white hover:text-[#078181]">
+              Sign out
+            </button>
+          </div>
+        )}
+            {/* {login !== "" && (
               <Fragment>
                 <Link
                   href="/profile"
@@ -128,7 +156,7 @@ export default function NavMenu({ login }: { login: string }) {
                   Sign out
                 </button>
               </Fragment>
-            )}
+            )} */}
           </div>
         </div>
       )}

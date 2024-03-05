@@ -2,18 +2,21 @@
 import CourseContext from "@/app/courses/contexts";
 import {useState, useEffect, useContext} from 'react';
 import {usePathname} from 'next/navigation';
+import { BeatLoader } from "react-spinners";
 import Link from 'next/link';
 
 export default function Page({params} : {
     params: any
 }) {
     const course: any = useContext(CourseContext);
-    let module: any;
-    let videoData: any;
+    let module: any = useState({});
+    let videoData: any = useState({});
     let path = usePathname();
     let link = "/courses/" + params.slug + "/module/" + (params.weeknum);
     if(Object.keys(course).length === 0){
-        return(<div className="fixed top-0  right-0 w-full h-[100vh] font-bold text-4xl flex bg-white justify-center items-center">Loading....</div>);
+        return(<div className="fixed top-0  right-0 w-full h-[100vh] font-bold text-4xl flex bg-white justify-center items-center">
+            <BeatLoader loading={true} color="#008080" size={40}/>
+        </div>);
     }
     else{
         if(course.modules.length > 0) {
