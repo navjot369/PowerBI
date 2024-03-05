@@ -4,20 +4,20 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div
-      className="bg-white w-full shadow-inner bg-[#078181]"
+      className="w-full shadow-inner bg-[#078181] pt-11"
       style={{ backgroundColor: "#078181" }}
     >
       <div className="flex justify-around flex-wrap md:gap-4 w-[80%] ml-[10%] items-center ">
         <div className="flex flex-col items-center lg:items-start justify-center p-4 sm:col-start-1 sm:col-end-3 lg:col-end-2">
           <Image
-            src="/logo.png"
+            src="/logo_footer.png"
             width="200"
             height="150"
             alt="logo"
-            className="mx-auto py-4 h-56 w-auto"
+            className="mx-auto py-4 w-auto"
           />
           {/* <div className="text-[#555] sm:px-11 lg:px-0 text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</div> */}
-          <div className="flex flex-row ml-5">
+          <div className="flex flex-row align-center justify-center w-full">
             <Image
               src="/Icons/facebook.png"
               width="50"
@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-[#999] w-full h-0.5"></div>
+      <div className="bg-[#999] w-full h-0.5 mt-11"></div>
       <div className="flex flex-col justify-between py-8 px-16 items-center sm:flex-row msx-w-6xl">
         <div className="text-white">Copyright &copy; 2024 Skill Craft</div>
         <div className="text-white">Powered By Skill Craft</div>
