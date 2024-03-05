@@ -4,8 +4,8 @@ import '@/app/ui/globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'Placed',
-  description: 'From projects to placement with placed',
+  title: 'Skill Craft',
+  description: '100% Assured PL-300 Certification',
 }
 
 export default function RootLayout({
