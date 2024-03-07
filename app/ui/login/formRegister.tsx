@@ -110,25 +110,13 @@ export default function FormRegister() {
 function ValidPass({ele} : {
     ele: any
 }) {
-    const [len, setLen] = useState(false);
-    const [digit, setDigit] = useState(false);
-    const [small, setSmall] = useState(false);
-    const [big, setBig] = useState(false);
-    const [symb, setSymb] = useState(false);
-    useEffect(() => {
-    if(ele.length > 7 && !len) {setLen(true);}
-    if(/\d/.test(ele) && !digit) {setDigit(true);}
-    if(/[a-z]/.test(ele) && !small) {setSmall(true);}
-    if(/[A-Z]/.test(ele) && !big) {setBig(true);}
-    if(/[!@#$%&]/.test(ele) && !symb) {setSymb(true);}
-    }, [ele]);
     return(<div className="absolute top-1/2 right-full flex justify-center items-center -translate-y-1/2">
         <div className="bg-black bg-opacity-80 rounded-xl p-4">
-            <ValidLine right={len} line="Password should be 8 characters long" />
-            <ValidLine right={digit} line="Password should have digits" />
-            <ValidLine right={small} line="Password should have lowercase letters" />
-            <ValidLine right={big} line="Password should have uppercase letters" />
-            <ValidLine right={symb} line="Password should have special symbols" />
+            <ValidLine right={ele.length > 7} line="Password should be 8 characters long" />
+            <ValidLine right={/\d/.test(ele)} line="Password should have digits" />
+            <ValidLine right={/[a-z]/.test(ele)} line="Password should have lowercase letters" />
+            <ValidLine right={/[A-Z]/.test(ele)} line="Password should have uppercase letters" />
+            <ValidLine right={/[!@#$%&]/.test(ele)} line="Password should have special symbols" />
         </div>
         <div className="w-0 h-0 border-y-8 border-l-8 border-l-black border-y-transparent opacity-80"></div>
     </div>);
