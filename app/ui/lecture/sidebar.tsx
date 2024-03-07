@@ -19,8 +19,8 @@ export default function SideBar({course, link, isOpen, setOpen} : {
     {"left-0" : isOpen, "left-11 -translate-x-80" : !isOpen})}>
         <div className="sticky z-50 top-0 right-0 left-0 w-full bg-[#078181] px-6 py-6 font-bold text-white text-2xl">
             <span>{course.title}</span>
-            <button className={clsx("absolute right-2 -translate-y-1/2 w-8 rounded-full text-[--pc] h-8 flex justify-center items-center duration-300 top-1/2 bg-white", 
-            {"rotate-180": !isOpen})} onClick = {() => setOpen(!isOpen)}>&lt;</button>
+            <button className={clsx("absolute right-2 -translate-y-1/2 w-8 pr-1 rounded-full text-[--pc] h-8 flex justify-center items-center duration-300 top-1/2 bg-white", 
+            {"rotate-180": !isOpen})} onClick = {() => setOpen(!isOpen)}>&#9664;</button>
         </div>
         <div className="pb-24">
             {course.modules.map((item:any, ind:number) => <Permodule key={ind} module={item} link={link+(ind+1)+"/"} path={path}/>)}
@@ -35,17 +35,17 @@ function Permodule({module, link, path}: {
 }) {
     const [isOpen, setOpen] = useState(path.includes(link));
     return(<div className="border-[0.4px] border-slate-200">
-        <div className="flex">
+        <div className="flex bg-white">
             <div className={clsx("h-4 w-4 rounded-full border-2 my-2 mx-2 duration-300",{"border-[--pc]" : path.includes(link)})}></div>
             <div className="my-1 text-xl">
                 <Link className={clsx("w-full block", {"text-[--pc]" : path.includes(link)})} href={link+"videos/1"}>{module.title}</Link>
             <div className="my-1 flex justify-center items-center">
-                <button className={clsx("bg-[--pc] flex justify-center text-white items-center px-1 cursor-default rounded-full w-4 h-4 duration-300",
-                {"rotate-90" : isOpen, "-rotate-90": !isOpen})} onClick={() => setOpen(!isOpen)}>&lt;</button>
+                <button className={clsx("bg-[--pc] flex justify-center text-white items-center p-2 text-xs cursor-default rounded-full w-4 h-4 duration-300",
+                {"rotate-90" : isOpen, "-rotate-90": !isOpen})} onClick={() => setOpen(!isOpen)}>&#9664;</button>
                 <span className="mx-4 text-xs">{module.videos.length} Videos</span>
                 <span className="text-xs">{module.assignments.length} Assignments</span>
             </div>
-        </div>
+            </div>
         </div>
         <div className="overflow-hidden relative">
         <div className={clsx("w-full bg-slate-200 duration-300 py-2",{ "mt-[-100%]" : !isOpen, "mt-0" : isOpen})}>

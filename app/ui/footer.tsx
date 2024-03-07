@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex justify-around flex-wrap md:gap-4 w-[80%] ml-[10%] items-center ">
         <div className="flex flex-col items-center lg:items-start justify-center p-4 sm:col-start-1 sm:col-end-3 lg:col-end-2">
           <Image
-            src="/logo_footer.png"
+            src="/white_logo.png"
             width="200"
             height="150"
             alt="logo"

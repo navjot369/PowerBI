@@ -145,10 +145,8 @@ function Box({
           </div>
           <Link
             href={link}
-            className="flex mx-11 hover:scale-110 justify-center items-center w-14 h-14 text-6xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg "
-          >
-            &gt;
-          </Link>
+            className="flex mx-11 hover:scale-110 justify-center items-center w-14 h-14 pl-1 text-3xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg "
+          >&#9654;</Link>
         </div>
         <div className="text-sm">{desp}</div>
       </div>
