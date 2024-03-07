@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AppLogo from "@/app/ui/logo";
 import { useState, useEffect } from "react";
+import clsx from 'clsx';
 
 export default function NavMenu({ login }: { login: string }) {
   const [isOpen, setOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function NavMenu({ login }: { login: string }) {
   }
   return (
     <div>
-      <div className="fixed bg-white z-20 flex items-center justify-between px-2 sm:px-11 w-full top-0 left-0 right-0">
+      <div className="fixed bg-white flex items-center justify-between px-2 sm:px-11 w-full top-0 left-0 right-0 z-50">
         <AppLogo />
         <div className="flex items-center">
           <div className="hidden min-[1000px]:flex items-center flex-row w-fit">
@@ -41,12 +42,6 @@ export default function NavMenu({ login }: { login: string }) {
             >
               Programs
             </Link>
-            {/* <Link
-              href="/resources"
-              className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
-            >
-              Resources
-            </Link> */}
             <Link
               href="/team"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
@@ -103,14 +98,8 @@ export default function NavMenu({ login }: { login: string }) {
           </div>
         )}
       </div>
-      {isOpen && (
         <div
-          className={
-            isOpen
-              ? "fixed min-[1000px]:hidden w-full py-4 ease-in flex items-center duration-100 bg-white top-10 z-2"
-              : "top-[-100%]"
-          }
-        >
+          className={clsx("fixed min-[1000px]:hidden h-screen w-full py-4 linear flex items-center duration-500 bg-white bg-opacity-60 backdrop-blur-xl top-10 z-40", {"right-full" : !isOpen, "right-0": isOpen})} onClick={() => {setOpen(false)}}>
           <div className="flex items-center flex-col justify-center w-full">
             <Link href="/" className="text-xl hover:text-[#444] px-4">
               Home
@@ -118,9 +107,6 @@ export default function NavMenu({ login }: { login: string }) {
             <Link href="/program" className="text-xl hover:text-[#444] px-4">
               Programs
             </Link>
-            {/* <Link href="/resources" className="text-xl hover:text-[#444] px-4">
-              Resources
-            </Link> */}
             <Link href="/team" className="text-xl hover:text-[#444] px-4">
               Meet the Team
             </Link>
@@ -144,22 +130,8 @@ export default function NavMenu({ login }: { login: string }) {
             </button>
           </div>
         )}
-            {/* {login !== "" && (
-              <Fragment>
-                <Link
-                  href="/profile"
-                  className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 my-2 h-fit hover:bg-white hover:text-[#078181]"
-                >
-                  Profile
-                </Link>
-                <button className="text-md font-bold border-2 border-[#078181] text-white bg-[#078181] rounded-md flex items-center px-4 h-fit hovewhiteblack hover:[#078181]white">
-                  Sign out
-                </button>
-              </Fragment>
-            )} */}
           </div>
         </div>
-      )}
     </div>
   );
 }

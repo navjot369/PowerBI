@@ -6,13 +6,13 @@ export default function Section6() {
     <div className="mx-auto max-w-6xl my-6">
       <div className="flex flex-col w-full sm:flex-row justify-between items-stretch">
         <div className="w-full sm:w-1/2 flex justify-center items-center">
-          <div className="text-6xl font-bold mx-4 my-4">
+          <div className="text-4xl md:text-6xl font-bold mx-4 my-4">
             What Our Students Say
           </div>
         </div>
-        <div className="sm:w-1/2 flex justify-end items-center">
+        <div className="w-full sm:w-1/2 flex justify-end items-center">
           <Image
-            className=" h-72"
+            className="hidden sm:block h-72"
             src="/Images/testinomial-sec-pic.png"
             width="300"
             height="400"
@@ -20,7 +20,7 @@ export default function Section6() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
         <Review
           title="Garv Sehgal"
           desp="This Power BI course exceeded my expectations - clear, concise, and practical."
@@ -57,7 +57,7 @@ function Review({
 }) {
   return (
     <div className="p-2 pt-4 w-full">
-      <div className="bg-white px-10 rounded-lg p-1 pb-6 relative shadow-[4px_4px_10px_0px] shadow-[#00807E]">
+      <div className="bg-white px-4 sm:px-10 rounded-lg p-1 pb-6 relative shadow-[4px_4px_10px_0px] shadow-[#00807E]">
         <div className="flex justify-start items-center my-4">
           <Image
             src={image}
@@ -66,7 +66,7 @@ function Review({
             className="w-16 h-16 mr-4 rounded-full shadow-lg"
             alt="profile"
           />
-          <div className="font-bold text-3xl">{title}</div>
+          <div className="font-bold text-xl md:text-3xl">{title}</div>
         </div>
         <div
           className={
@@ -75,9 +75,6 @@ function Review({
         >
           &quot;{desp}&quot;
         </div>
-        {/* <div className="absolute bottom-0 right-0 tracking-widest text-[#ff9635]">
-          &#9733; &#9733; &#9733; &#9733; &#9733;{" "}
-        </div> */}
       </div>
     </div>
   );

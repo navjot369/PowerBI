@@ -3,7 +3,7 @@ import { open_sans } from "../fonts";
 
 export default function Section5() {
   return (
-    <div className="w-full grid grid-cols-[1fr] md:grid-cols-[2fr_3fr] max-w-6xl my-24 mx-auto">
+    <div className="w-full grid grid-cols-[1fr] md:grid-cols-[2fr_3fr] max-w-6xl my-2 md:my-24 mx-auto">
       <div className="py-4 pl-2">
         <div className="text-5xl font-bold mt-[15%]">Why Skillcraft?</div>
       </div>
