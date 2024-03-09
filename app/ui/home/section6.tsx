@@ -70,7 +70,7 @@ function Review({
         </div>
         <div
           className={
-            open_sans.className + "-mt-4 text-md text-[#444] font-light"
+            open_sans.className + "-mt-4 text-md text-[#444] font-light text-center sm:text-left"
           }
         >
           &quot;{desp}&quot;

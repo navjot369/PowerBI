@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function PaymentSec() {
   return (
-    <div className="my-28 max-w-6xl mx-auto px-2">
+    <div className="my-8 md:my-28 max-w-6xl mx-auto px-2">
       <div className="flex flex-col items-center">
         <h2 className="text-4xl text-center font-bold my-2">
           Transform Your Lives

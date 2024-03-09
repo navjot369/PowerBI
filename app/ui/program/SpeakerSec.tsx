@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SpeakerSec() {
   return (
-    <div className="my-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
+    <div className="my-8 md:my-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
       <div className="p-4">
         <Image
           src="/Images/PowerBi_sir.png"
@@ -13,8 +13,8 @@ export default function SpeakerSec() {
           alt="Speaker"
         />
       </div>
-      <div className="flex flex-col items-center md:items-start justify-center px-11">
-        <div className="text-5xl font-bold my-2 text-center md:text-left">
+      <div className="flex flex-col items-center md:items-start justify-center px-4 md:px-11">
+        <div className="text-2xl md:text-5xl font-bold my-2 text-center md:text-left">
           Mr. Shishir Dhangar
         </div>
         <div className="text-md my-4 text-center md:text-left">

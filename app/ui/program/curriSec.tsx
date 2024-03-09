@@ -32,17 +32,17 @@ export default function CurriculumSec() {
   }, [data]);
 
   return (
-    <div className="mx-auto my-20 px-2 max-w-6xl">
+    <div className="mx-auto my-8 sm:my-20 px-2 max-w-6xl">
       <div className="flex flex-col items-start">
-        <h3 className="text-6xl">What you will learn</h3>
-        <p className="w-full my-6">
+        <h3 className="w-full text-3xl font-bold sm:font-normal text-center sm:text-left sm:text-6xl">What you will learn</h3>
+        <p className="w-full my-2 sm:my-6 text-center sm:text-left px-1">
           You'll learn to create impactful data visualizations, analyze complex
           datasets, and master advanced Power BI techniques. Gain the skills to
           make data-driven decisions confidently and propel your career forward.
         </p>
       </div>
       {data.course.modules.length > 0? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6 mx-auto">
           {data.course.modules.map((course: any, ind) => (
             <Box
               imgSrc="/Images/ecourse-template.jpg"
@@ -105,20 +105,20 @@ function Box({
   }
   return (
     <div className="w-full rounded-xl bg-[#f6f6f6] hover:bg-[#f3f5f5] duration-500 border-2 border-[#ddd7d7] hover:shadow-2xl">
-      <div className="w-full rounded-xl p-4">
+      <div className="w-full rounded-xl p-1 sm:p-4">
         <Image
-          className="rounded-xl"
+          className="rounded-xl "
           src={imgSrc}
           height="500"
           width="1000"
           alt="course banner"
         />
       </div>
-      <div className="p-6">
+      <div className="p-2 sm:p-6">
         <div className="flex justify-between items-center">
           <div>
             <h3 className="text-4xl font-bold mb-4">{title}</h3>
-            <div className="flex w-fit flex-row items-center mb-4 gap-6">
+            <div className="flex w-fit flex-row items-center mb-4 gap-2 sm:gap-6">
               <span className="flex gap-2">
                 {" "}
                 <Image
@@ -145,7 +145,7 @@ function Box({
           </div>
           <Link
             href={link}
-            className="flex mx-11 hover:scale-110 justify-center items-center w-14 h-14 pl-1 text-3xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg "
+            className="flex mx-1 md:mx-11 hover:scale-110 justify-center items-center w-14 h-14 pl-1 text-3xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg "
           >&#9654;</Link>
         </div>
         <div className="text-sm">{desp}</div>
