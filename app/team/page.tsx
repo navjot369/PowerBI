@@ -2,8 +2,8 @@ import Container from "@/app/ui/team/contFile";
 
 export default function Page() {
     return(<div className="w-full">
-        <div className="mx-auto w-min flex flex-col justify-end items-end my-16">
-        <h1 className="mx-auto w-max text-[--pc] text-6xl font-bold">Meet the team</h1>
+        <div className="mx-auto w-min flex flex-col justify-end items-end my-4 md:my-16">
+        <h1 className="mx-auto w-max text-[--pc] text-4xl  sm:text-6xl font-bold">Meet the team</h1>
         <div className="w-3/4 h-2 bg-yellow-500"></div>
         </div>
         <div className="bg-team-page bg-no-repeat bg-center bg-contain  w-full flex flex-col items-center pb-11">

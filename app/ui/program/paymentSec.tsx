@@ -102,7 +102,7 @@ function Box({
     </div>
   ));
   return (
-    <div className="w-[45%] mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
+    <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
       <div className="bg-[#3091a4] p-6">
         <h1 className="font-bold text-bold text-2xl break-words">{top}</h1>
         <h3 className="my-4 text-slate-300">{desp}</h3>

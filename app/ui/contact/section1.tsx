@@ -40,8 +40,8 @@ export default function Sec1() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row pt-24 max-w-7xl mx-auto mb-24">
-      <div className="w-full md:w-1/2 px-11">
+    <div className="flex flex-col md:flex-row pt-24 max-w-7xl mx-auto mb-14 md:mb-24">
+      <div className="w-full md:w-1/2 px-4 md:px-11">
         <div className="text-6xl font-bold">Contact Us</div>
         <div className="w-28 my-2 h-1 bg-[repeating-linear-gradient(135deg,transparent_0%,transparent_10%,#ff9635_10%,#ff9635_30%)]"></div>
         <div className="text-md text-justify text-[#9f9696] my-8">
@@ -129,8 +129,8 @@ export default function Sec1() {
           ></iframe>
         </div>
       </div>
-      <div className="w-full md:w-1/2 px-11">
-        <div className="bg-white shadow-2xl rounded-2xl px-11 py-6">
+      <div className="w-full md:w-1/2 px-0 md:px-11">
+        <div className="bg-white md:shadow-2xl rounded-2xl px-4 md:px-11 py-6">
           <div className="text-3xl font-bold my-8">Have Questions?</div>
           <div className="text-[#9f9696]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
