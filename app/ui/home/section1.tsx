@@ -11,7 +11,7 @@ export default function Section1() {
         </div>
         <div className="bg-[#ff9635] shrink-0 w-1"></div>
         <div className="flex flex-col justify-between lg:flex-row px-11 ">
-          <div className="text-xl flex items-center text-[#828181] my-6 sm:my-0 text-center sm:text-left">
+          <div className="text-xl flex items-center text-[#828181] my-2 md:my-6 sm:my-0 text-center sm:text-left">
           100% Assured Microsoft Certification Course with No questions asked 100% Money Back guarantee. Learn from the best, get Certified, and be the Best!
           </div>
         </div>

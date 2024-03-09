@@ -99,7 +99,7 @@ export default function NavMenu({ login }: { login: string }) {
         )}
       </div>
         <div
-          className={clsx("fixed min-[1000px]:hidden h-screen w-screen py-4 linear flex items-center duration-500 bg-white bg-opacity-60 backdrop-blur-xl top-10 z-40", {"right-full" : !isOpen, "right-0": isOpen})} onClick={() => {setOpen(false)}}>
+          className={clsx("fixed min-[1000px]:hidden h-full w-screen py-4 linear flex items-center duration-500 bg-white bg-opacity-60 backdrop-blur-xl top-10 z-40", {"right-full" : !isOpen, "right-0": isOpen})} onClick={() => {setOpen(false)}}>
           <div className="flex items-center flex-col justify-center w-full">
             <Link href="/" className="text-xl hover:text-[#444] px-4">
               Home
