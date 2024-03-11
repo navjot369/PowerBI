@@ -4,6 +4,7 @@ import { apiLink } from "@/app/api";
 import Image from "next/image";
 
 import Link from "next/link";
+import { Router, useRouter } from "next/navigation";
 
 export default function PaymentSec() {
   return (
@@ -73,6 +74,7 @@ export default function PaymentSec() {
 }
 
 function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
+  const router = useRouter();
   const tickTemp = arrTick.map((item, ind) => (
     <div key={ind} className="flex flex-row my-2">
       <Image src="/Icons/tick-circle.svg" height="20" width="20" alt="Icon" />
@@ -97,6 +99,10 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
   const receiptId = "qwsaq1";
 
   const paymentHandler = async (e) => {
+    if (localStorage.getItem("user") === null) {
+      router.push("/auth/login");
+      return;
+    }
     const response = await fetch(apiLink + "/pay/order", {
       method: "POST",
       body: JSON.stringify({
