@@ -40,11 +40,11 @@ export default function FormLogin() {
   };
   return (
     <form
-      className="w-full flex flex-col justify-center items-center mt-11 md:px-4"
+      className="w-full flex flex-col items-stretch justify-center md:items-center mt-11 md:px-4"
       onSubmit={handleSubmit}
     >
       <div className="text-md text-red-700 font-bold">{resMessage}</div>
-      <div className="bg-white w-full h-11 p-2 my-2 rounded-xl grid grid-cols-[40px_1fr] grid-rows-1 items-center relative">
+      <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[40px_1fr] grid-rows-1 items-center relative">
         <Image
           className="w-8 h-8"
           src="/Icons/user-login.svg"
@@ -52,7 +52,7 @@ export default function FormLogin() {
           height="100"
           alt="Icon"
         ></Image>
-        <div className="pt-2 w-full">
+        <div className="pt-2">
           <input
             className="outline-none auth-input md:w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500"
             ref={userRef}
@@ -73,7 +73,7 @@ export default function FormLogin() {
           </label>
         </div>
       </div>
-      <div className="bg-white w-full h-11 p-2 my-2 rounded-xl grid grid-cols-[40px_1fr] grid-rows-1 items-center relative overflow-hidden">
+      <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[40px_1fr] grid-rows-1 items-center relative overflow-hidden">
         <Image
           className="w-7 h-7"
           src="/Icons/lock-login.svg"
