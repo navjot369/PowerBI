@@ -213,13 +213,13 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           Start Learning{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
         </button>
-        <button
+        {/* <button
           onClick={() => {
             test();
           }}
         >
           test
-        </button>
+        </button> */}
       </div>
     </div>
   );
