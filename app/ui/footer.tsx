@@ -8,13 +8,13 @@ export default function Footer() {
       style={{ backgroundColor: "#078181" }}
     >
       <div className="flex justify-around flex-wrap md:gap-4 w-[80%] ml-[10%] items-center ">
-        <div className="flex flex-col items-center lg:items-start justify-center p-4 sm:col-start-1 sm:col-end-3 lg:col-end-2">
+        <div className="flex flex-col items-center lg:items-between h-full justify-between sm:col-start-1 sm:col-end-3 lg:col-end-2">
           <Image
             src="/white_logo.png"
             width="200"
             height="150"
             alt="logo"
-            className="mx-auto py-4 w-auto"
+            className="mx-auto pb-11 w-auto"
           />
           {/* <div className="text-[#555] sm:px-11 lg:px-0 text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</div> */}
           <div className="flex flex-row align-center justify-center w-full">
@@ -72,18 +72,6 @@ export default function Footer() {
             >
               Contact Us
             </Link>
-            {/* <Link
-              href="/program"
-              className="text-white hover:text-[#ff9635] block"
-            >
-              WordPress Basic Tutorial
-            </Link>
-            <Link
-              href="/program"
-              className="text-white hover:text-[#ff9635] block"
-            >
-              Introduction to Coding
-            </Link> */}
           </div>
         </div>
         <div className=" flex flex-col items-center lg:items-start">
@@ -93,7 +81,7 @@ export default function Footer() {
             <div className="text-white">+91 9815260084</div>
 
             <div className="font-bold">E-mail</div>
-            <div className="text-white">skillcraftsupport@gmail.com</div>
+            <div className="text-white">coursesforcareers.tech@gmail.com</div>
             <div className="font-bold">Address</div>
             <div className="text-white">Patiala, Punjab - 147001</div>
           </div>
@@ -101,8 +89,8 @@ export default function Footer() {
       </div>
       <div className="bg-[#999] w-full h-0.5 mt-11"></div>
       <div className="flex flex-col justify-between py-8 px-16 items-center sm:flex-row msx-w-6xl">
-        <div className="text-white">Copyright &copy; 2024 Skill Craft</div>
-        <div className="text-white">Powered By Skill Craft</div>
+        <div className="text-white">Copyright &copy; 2024 Courses for Careers</div>
+        <div className="text-white">Powered By Courses for Careers</div>
       </div>
     </div>
   );

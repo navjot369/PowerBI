@@ -45,7 +45,7 @@ export default function CurriculumSec() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6 mx-auto">
           {data.course.modules.map((course: any, ind) => (
             <Box
-              imgSrc="/Images/ecourse-template.jpg"
+              imgSrc={`/Images/Courses_banner/banner${ind+1}.jpg`}
               title={course.title}
               link={`/courses/65dadfed4f55cc9363c750e4/lecture/${
                 ind + 1

@@ -4,7 +4,7 @@ import '@/app/ui/globals.css'
 
 
 export const metadata: Metadata = {
-  title: 'Skill Craft',
+  title: 'Courses for Careers',
   description: '100% Assured PL-300 Certification',
 }
 

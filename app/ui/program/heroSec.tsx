@@ -8,7 +8,7 @@ export default function HeroSec() {
               Power BI Assured
             </div>
             <div className="text-3xl min-[630px]:text-3xl font-bold my-2">
-              With Skill Craft
+              With Courses for Careers
             </div>
             <div className="w-1/4 h-2 mx-auto sm:mx-0 bg-yellow-500"></div>
           </div>

@@ -6,8 +6,8 @@ export default function SpeakerSec() {
     <div className="my-8 md:my-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
       <div className="p-4">
         <Image
-          src="/Images/PowerBi_sir.png"
-          className="rounded-full w-2/3 mx-auto md:w-full"
+          src="/Images/Shishir_img.png"
+          className="rounded-full w-2/3 mx-auto md:w-full border-4 border-[#078181] shadow-md shadow-[#078181]"
           width="500"
           height="500"
           alt="Speaker"
