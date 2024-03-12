@@ -23,7 +23,7 @@ export default function PaymentSec() {
       </div>
       <div className="flex justify-center items-center">
         <Box
-          top="Power BI Assured With Skill Craft"
+          top="Power BI Assured With Courses for Careers"
           desp=""
           price={199}
           arrTick={[
