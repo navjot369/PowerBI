@@ -107,7 +107,7 @@ function Box({
     <div className="w-full rounded-xl bg-[#f6f6f6] hover:bg-[#f3f5f5] duration-500 border-2 border-[#ddd7d7] hover:shadow-2xl">
       <div className="w-full rounded-xl p-1 sm:p-4">
         <Image
-          className="rounded-xl "
+          className="rounded-xl h-72 md:h-80"
           src={imgSrc}
           height="500"
           width="1000"
