@@ -54,7 +54,7 @@ export default function FormLogin() {
         ></Image>
         <div className="pt-2">
           <input
-            className="outline-none auth-input md:w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500"
+            className="outline-none auth-input w-full md:w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500"
             ref={userRef}
             value={formData.username}
             type="text"
@@ -83,7 +83,7 @@ export default function FormLogin() {
         ></Image>
         <div className="pt-2">
           <input
-            className="outline-none auth-input md:w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500"
+            className="outline-none auth-input w-full md:w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500"
             ref={passRef}
             value={formData.password}
             name="password"
