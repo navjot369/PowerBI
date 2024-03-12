@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import { poppins } from '@/app/ui/fonts'
-import '@/app/ui/globals.css'
-
+import type { Metadata } from "next";
+import { poppins } from "@/app/ui/fonts";
+import "@/app/ui/globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'Courses for Careers',
@@ -11,13 +11,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className + "  box-border p-0"}>
-        {children}
-      </body>
+      <body className={poppins.className + "  box-border p-0"}>{children}</body>
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
     </html>
-  )
+  );
 }
