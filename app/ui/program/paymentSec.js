@@ -2,9 +2,11 @@
 
 import { apiLink } from "@/app/api";
 import Image from "next/image";
+import AppLogo from "@/app/ui/logo";
 
 import Link from "next/link";
 import { Router, useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function PaymentSec() {
   return (
@@ -33,6 +35,7 @@ export default function PaymentSec() {
           ]}
           arrMinus={[]}
           arrPlus={[]}
+          courseId="65dadfed4f55cc9363c750e4"
         />
         {/* <Box
           top="Pro"
@@ -73,7 +76,7 @@ export default function PaymentSec() {
   );
 }
 
-function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
+function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
   const router = useRouter();
   const tickTemp = arrTick.map((item, ind) => (
     <div key={ind} className="flex flex-row my-2">
@@ -123,7 +126,8 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
       currency,
       name: "Courses For Career", //your business name
       description: "Purchase Course",
-      image: "https://example.com/your_logo",
+      image:
+        "https://coursesforcareers.tech/_next/image?url=%2Fcolour_logo.png&w=256&q=75",
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       handler: async function (response) {
         const body = {
@@ -138,14 +142,26 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
           },
         });
         const jsonRes = await validateRes.json();
+        if (jsonRes.msg == "success") {
+          let username = localStorage.getItem("user");
+          const response = await axios.post(
+            apiLink + "/enroll/" + "65dadfed4f55cc9363c750e4" + "/" + username
+          );
+          // const response = await axios.post(apiLink + "/enroll");
+          console.log(response);
+          if (response.data.message == "success") {
+            alert("thanks for paying");
+          }
+        }
         console.log(jsonRes, "dddd");
       },
       notes: {
         address: "Razorpay Corporate Office",
       },
       theme: {
-        color: "#3399cc",
+        color: "#3091a4",
       },
+      reminder_enable: true,
     };
     var rzp1 = new window.Razorpay(options);
     rzp1.on("payment.failed", function (response) {
@@ -159,6 +175,17 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
     });
     rzp1.open();
     e.preventDefault();
+  };
+
+  const test = async () => {
+    let username = localStorage.getItem("user");
+    const response = await axios.post(
+      apiLink + "/enroll/" + "65dadfed4f55cc9363c750e4" + "/" + username
+    );
+    // const response = await axios.post(apiLink + "/enroll");
+    if (response.data.message == "success") {
+      alert("thanks for paying");
+    }
   };
 
   return (
@@ -186,6 +213,13 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus }) {
           Start Learning{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
         </button>
+        {/* <button
+          onClick={() => {
+            test();
+          }}
+        >
+          test
+        </button> */}
       </div>
     </div>
   );
