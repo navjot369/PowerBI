@@ -8,7 +8,7 @@ export default function Layout({children} : {
             <div className="hidden md:flex overflow-hidden items-center justify-center bg-slate-300 m-1 rounded-lg">
             <Image className="w-4/5 mb-11" src="/colour_logo.png" width="500" height="1000" alt="Wallpaper" />
             </div>
-            <div className="flex justify-center items-center h-full w-full pb-24 md:pb-0">{children}</div>
+            <div className="flex justify-center items-center h-full w-full pb-24 px-4 md:p-0">{children}</div>
         </div>
     </div>);
 }
