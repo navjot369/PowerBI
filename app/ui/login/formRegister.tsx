@@ -41,6 +41,7 @@ export default function FormRegister() {
         }
         if(!isSame(formData.password, confirmPass)) {
             pass2Ref.current.focus();
+            setConfShow(true);
             return;
         }
         setLoading(true);
@@ -94,7 +95,7 @@ export default function FormRegister() {
         <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
             <div className="pt-2">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={pass2Ref} 
-                value={confirmPass} name="passConfirm" onFocus={() => setConfShow(true)} onBlur={() => setConfShow(false)} type={showPass2?"text":"password"} onChange={handleConfirm} id="pass2" placeholder="." disabled={false} required></input>
+                value={confirmPass} name="passConfirm" onBlur={() => setConfShow(false)} type={showPass2?"text":"password"} onChange={handleConfirm} id="pass2" placeholder="." disabled={false} required></input>
                 <label className="absolute left-2 top-0 duration-300" htmlFor="pass2">Confirm Password</label>
                 <p className="absolute text-sm h-full rounded-2xl top-0 right-0 bg-white p-2 flex items-center text-black font-bold cursor-default" onClick={() => setShowPass2(!showPass2)}>{showPass2?"Hide":"Show"}</p>
             </div>
@@ -110,15 +111,15 @@ export default function FormRegister() {
 function ValidPass({ele} : {
     ele: any
 }) {
-    return(<div className="absolute top-1/2 right-full flex justify-center items-center -translate-y-1/2">
-        <div className="bg-black bg-opacity-80 rounded-xl p-4">
+    return(<div className="absolute left-1/2 bottom-full flex flex-col justify-center items-center -translate-x-1/2">
+        <div className="bg-white bg-opacity-80 rounded-xl p-4">
             <ValidLine right={ele.length > 7} line="Password should be 8 characters long" />
             <ValidLine right={/\d/.test(ele)} line="Password should have digits" />
             <ValidLine right={/[a-z]/.test(ele)} line="Password should have lowercase letters" />
             <ValidLine right={/[A-Z]/.test(ele)} line="Password should have uppercase letters" />
             <ValidLine right={/[!@#$%&]/.test(ele)} line="Password should have special symbols" />
         </div>
-        <div className="w-0 h-0 border-y-8 border-l-8 border-l-black border-y-transparent opacity-80"></div>
+        <div className="w-0 h-0 border-x-8 border-t-8 border-t-white border-x-transparent opacity-80"></div>
     </div>);
 }
 
@@ -138,13 +139,13 @@ function ConfirmShow({pass1, pass2} : {
     pass1: String,
     pass2: String
 }){
-    return(<div className="absolute top-1/2 right-full flex justify-center items-center -translate-y-1/2">
-    <div className="bg-black bg-opacity-80 rounded-xl p-4">
+    return(<div className="absolute left-1/2 bottom-full flex flex-col justify-center items-center -translate-x-1/2">
+    <div className="bg-white bg-opacity-80 rounded-xl p-4">
         {pass1 === pass2 && pass1 !== ""?
         <p className="text-green-600 truncate font-bold"><span className="px-2">&#x2713;</span>Both the passwords should be same</p>:
         <p className="text-red-700 truncate font-bold"><span className="px-2">&#x274C;</span>Both the passwords should be same</p>}
     </div>
-    <div className="w-0 h-0 border-y-8 border-l-8 border-l-black border-y-transparent opacity-80"></div>
+    <div className="w-0 h-0 border-x-8 border-t-8 border-t-white border-x-transparent opacity-80"></div>
 </div>);
 }
 
