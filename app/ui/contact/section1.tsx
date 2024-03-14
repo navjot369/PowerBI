@@ -38,6 +38,14 @@ export default function Sec1() {
       // Handle error (display error message, log to console, etc.)
     }
   };
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showRefunds, setShowRefunds] = useState(false);
+
+  // Function to toggle visibility of popups
+  const toggleTerms = () => setShowTerms(!showTerms);
+  const togglePrivacy = () => setShowPrivacy(!showPrivacy);
+  const toggleRefunds = () => setShowRefunds(!showRefunds);
 
   return (
     <div className="flex flex-col md:flex-row pt-24 max-w-7xl mx-auto mb-14 md:mb-24">
@@ -127,13 +135,139 @@ export default function Sec1() {
             loading="lazy"
           ></iframe>
         </div>
+        <div className="flex flex-col text-blue-400">
+          <a href="#" onClick={toggleTerms}>
+            Terms and Conditions
+          </a>
+          <a href="#" onClick={togglePrivacy}>
+            Privacy
+          </a>
+          <a href="#" onClick={toggleRefunds}>
+            Refunds/Cancellations
+          </a>
+        </div>
       </div>
+      {showTerms && (
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-lg">
+            <h2 className="text-2xl font-bold mb-4">Terms and Conditions</h2>
+            <div className="h-[450px] overflow-scroll">
+              By enrolling in any course offered by CoursesForTech, you agree to
+              abide by these terms and conditions. Payment: Payment for courses
+              must be made in full prior to accessing course materials unless
+              otherwise stated. Course Access: Upon payment, you will be granted
+              access to the course materials for the duration specified in the
+              course description. Intellectual Property: All course materials,
+              including but not limited to videos, texts, and assessments, are
+              the intellectual property of CoursesForTech and may not be
+              distributed or reproduced without permission. Refunds: Refunds are
+              only available within the first 7 days of course enrollment,
+              provided no more than 20% of the course materials have been
+              accessed. Code of Conduct: Participants must conduct themselves
+              respectfully in all course interactions, refraining from
+              harassment or discrimination based on race, gender, religion, or
+              any other protected characteristic. Disclaimer: CoursesForTech
+              endeavors to provide accurate and up-to-date information, but does
+              not guarantee the completeness or accuracy of course content.
+              Modification of Terms: CoursesForTech reserves the right to modify
+              these terms and conditions at any time, with changes being
+              effective upon posting on the CoursesForTech website. Termination
+              of Access: CoursesForTech reserves the right to terminate access
+              to courses for individuals who violate these terms and conditions
+              or engage in disruptive behavior. By enrolling in a course with
+              CoursesForTech, you acknowledge that you have read, understood,
+              and agreed to abide by these terms and conditions.{" "}
+            </div>
+            <button
+              className="text-blue-500 hover:text-blue-700"
+              onClick={toggleTerms}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {/* Popup for Privacy Policy */}
+      {showPrivacy && (
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-lg">
+            <h2 className="text-2xl font-bold mb-4">Privacy Policy</h2>
+            <div className="h-[450px] overflow-scroll">
+              Information Collection: CoursesForTech may collect personal
+              information such as name, email address, and payment details when
+              you register for a course or interact with our website. Use of
+              Information: Personal information collected by CoursesForTech is
+              used solely for the purpose of providing and improving our
+              services, including course delivery, customer support, and
+              communication regarding course updates or promotions. Data
+              Security: CoursesForTech employs industry-standard security
+              measures to protect your personal information from unauthorized
+              access, disclosure, alteration, or destruction. Third-Party
+              Services: CoursesForTech may utilize third-party services, such as
+              payment processors or analytics tools, which may collect
+              additional information subject to their respective privacy
+              policies. Cookies: CoursesForTech may use cookies and similar
+              technologies to enhance your browsing experience and collect usage
+              data. You have the option to disable cookies in your browser
+              settings, although this may affect certain functionalities of the
+              website. Data Retention: CoursesForTech retains personal
+              information only for as long as necessary to fulfill the purposes
+              for which it was collected or as required by law. Disclosure of
+              Information: CoursesForTech will not disclose your personal
+              information to third parties except as necessary to provide our
+              services or as required by law.
+            </div>
+            <button
+              className="text-blue-500 hover:text-blue-700"
+              onClick={togglePrivacy}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {/* Popup for Refunds/Cancellations */}
+      {showRefunds && (
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-lg">
+            <h2 className="text-2xl font-bold mb-4">Refunds/Cancellations</h2>
+            <div className="h-[450px] overflow-scroll">
+              Refund Eligibility: CoursesForTech offers refunds under the
+              following conditions: If requested within 7 days of course
+              enrollment. If the course exam is failed after completing all
+              course requirements. Refund Process: Refund requests must be
+              submitted in writing to CoursesForTech's support team. For exam
+              failure refunds, proof of completion of all course requirements
+              and exam failure may be required. Cancellation Policy: You may
+              cancel your course enrollment at any time. If cancellation occurs
+              within the first 7 days of enrollment, you are eligible for a full
+              refund. After the initial 7-day period, refunds are only available
+              if you fail the course exam after completing all requirements.
+              Exam Failure Refunds: To qualify for a refund due to exam failure,
+              you must have completed all course requirements prior to taking
+              the exam. Proof of exam failure may be required to process the
+              refund. Processing Time: Refunds will be processed within 30 days
+              of receiving a valid refund request. Exceptions: Refunds will not
+              be provided for failure to pass an exam if you have not completed
+              all course requirements. Refunds will not be provided for any
+              other reason beyond those stated in this policy. Contact
+              Information: For refund requests or further assistance, please
+              contact CoursesForTech's support team at
+              coursesforcareers.tech@gmail.com.
+            </div>
+            <button
+              className="text-blue-500 hover:text-blue-700"
+              onClick={toggleRefunds}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <div className="w-full md:w-1/2 px-0 md:px-11">
         <div className="bg-white md:shadow-2xl rounded-2xl px-4 md:px-11 py-6">
           <div className="text-3xl font-bold my-8">Have Questions?</div>
-          <div className="text-blue-500 cursor-pointer underline">
-            Privacy Policy
-          </div>
+
           <form onSubmit={handleSubmit}>
             <input
               className="bg-[#fafafa] p-4 border-[#444] border-[1px] border-opacity-30 w-full my-3 focus:bg-white focus:border-dotted outline-none font-light"
