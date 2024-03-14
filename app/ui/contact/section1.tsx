@@ -44,10 +44,7 @@ export default function Sec1() {
       <div className="w-full md:w-1/2 px-4 md:px-11">
         <div className="text-6xl font-bold">Contact Us</div>
         <div className="w-28 my-2 h-1 bg-[repeating-linear-gradient(135deg,transparent_0%,transparent_10%,#ff9635_10%,#ff9635_30%)]"></div>
-        <div className="text-md text-justify text-[#9f9696] my-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.{" "}
-        </div>
+        <div className="text-md text-justify text-[#9f9696] my-8"></div>
         <div className="my-11">
           <div className="my-2 flex items-end text-[#9f9696] text-lg">
             <Image
@@ -57,7 +54,9 @@ export default function Sec1() {
               height="50"
               alt="Icons"
             />
-            <span className="">Rajpura, Punjab</span>
+            <span className="">
+              Chitkara University ,Rajpura, Punjab, 147001
+            </span>
           </div>
           <div className="my-2 flex items-end text-[#9f9696] text-lg">
             <Image
@@ -67,7 +66,7 @@ export default function Sec1() {
               height="50"
               alt="Icons"
             />
-            <span className="">contact@example.com</span>
+            <span className="">coursesforcareers.tech@gmail.com</span>
           </div>
           <div className="my-2 flex items-end text-[#9f9696] text-lg">
             <Image
@@ -77,7 +76,7 @@ export default function Sec1() {
               height="50"
               alt="Icons"
             />
-            <span className="">+91 12334343</span>
+            <span className="">+91 9815260084</span>
           </div>
         </div>
         <div className="flex">
@@ -132,8 +131,8 @@ export default function Sec1() {
       <div className="w-full md:w-1/2 px-0 md:px-11">
         <div className="bg-white md:shadow-2xl rounded-2xl px-4 md:px-11 py-6">
           <div className="text-3xl font-bold my-8">Have Questions?</div>
-          <div className="text-[#9f9696]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <div className="text-blue-500 cursor-pointer underline">
+            Privacy Policy
           </div>
           <form onSubmit={handleSubmit}>
             <input
