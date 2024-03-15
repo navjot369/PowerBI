@@ -24,7 +24,7 @@ export default function Page() {
         <HeroSec />
         <StatSec />
         <CurriculumSec />
-        <VideoSec />
+        {/* <VideoSec /> */ /* Will be shown after correct video provided */}
         <SpeakerSec />
         <FeatureSec />
         <PaymentSec />
