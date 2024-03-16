@@ -206,13 +206,13 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         {plusTemp}
       </div>
       <div className="my-6 absolute left-4 bottom-4 group">
-        <button
+        {/* <button
           className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
           onClick={paymentHandler}
         >
           Start Learning{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
-        </button>
+        </button> */}
         {/* <button
           onClick={() => {
             test();
@@ -220,6 +220,14 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         >
           test
         </button> */}
+        <button
+          onClick={() => {
+            test();
+          }}
+          className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
+        >
+          We are coming soon...
+        </button>
       </div>
     </div>
   );
