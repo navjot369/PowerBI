@@ -22,13 +22,10 @@ export default function FormRegister() {
     const userRef: any = useRef(null);
     const passRef: any = useRef(null);
     const nameRef: any = useRef(null);
+    const mailRef: any = useRef(null);
     const pass2Ref: any = useRef(null);
     const handleChange = (e: any) => {
         setFormData({...formData, [e.target.name]: e.target.value});
-    }
-    const validPass = (e:any) => {
-        handleChange(e);
-        let pass = 0;
     }
     const handleConfirm = (e: any) => {
         setConfirmPass(e.target.value);
@@ -36,6 +33,7 @@ export default function FormRegister() {
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         if(!isValid(formData.password)) {
+            setResMessage("Password not valid");
             passRef.current.focus();
             return;
         }
@@ -48,39 +46,59 @@ export default function FormRegister() {
         setResMessage("");
         userRef.current.toggleAttribute("disabled", true);
         passRef.current.toggleAttribute("disabled", true);
+        mailRef.current.toggleAttribute("disabled", true);
         nameRef.current.toggleAttribute("disabled", true);
         pass2Ref.current.toggleAttribute("disabled", true);
         
         try {
             const res = await axios.post(apiLink + "/auth/register", formData);
             localStorage.setItem("user", formData.username);
-            // window.location.href="/";
+            window.location.href="/";
             setLoading(false);
         }
         catch (error: any) {
-            setResMessage(error.response.data.message);
             userRef.current.toggleAttribute("disabled", false);
             passRef.current.toggleAttribute("disabled", false);
+            mailRef.current.toggleAttribute("disabled", false);
             nameRef.current.toggleAttribute("disabled", false);
             pass2Ref.current.toggleAttribute("disabled", false);
+            if(error.response == undefined) {
+                setResMessage("Network Error!");
+                
+            } else {
+                if(error.response.data.message === "Error registering user") {
+                    setResMessage("This E-mail is already registred.");
+                    mailRef.current.focus();
+                }
+                else if(error.response.data.message === "User already exists.") {
+                    setResMessage("This username is already taken");
+                    userRef.current.focus();
+                }
+            }
             setLoading(false);
-            console.log(error);
         }
     }
     return(<form className="w-full flex flex-col justify-center items-center mt-11" onSubmit={handleSubmit}>
         <div className="text-md text-red-700 font-bold">{resMessage}</div>
         <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
             <div className="pt-2">
-                <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={userRef} 
-                value={formData.username} type="text" name="username" onChange={handleChange} id="username" placeholder="." disabled={false} required></input>
-                <label className="absolute left-2 top-0 duration-300" htmlFor="username">Name</label>
+                <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={nameRef} 
+                value={formData.name} type="text" name="name" onChange={handleChange} id="name" placeholder="." disabled={false} required></input>
+                <label className="absolute left-2 top-0 duration-300" htmlFor="name">Name</label>
             </div>
         </div>
         <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
             <div className="pt-2">
-                <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={nameRef} 
-                value={formData.name} type="text" name="name" onChange={handleChange} id="name" placeholder="." disabled={false} required></input>
-                <label className="absolute left-2 top-0 duration-300" htmlFor="name">E-mail</label>
+                <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={mailRef} 
+                value={formData.email} type="text" name="email" onChange={handleChange} id="email" placeholder="." disabled={false} required></input>
+                <label className="absolute left-2 top-0 duration-300" htmlFor="email">E-mail</label>
+            </div>
+        </div>
+        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+            <div className="pt-2" title="For user Athentication">
+                <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={userRef} 
+                value={formData.username} type="text" name="username" onChange={handleChange} id="username" placeholder="." disabled={false} required></input>
+                <label className="absolute left-2 top-0 duration-300" htmlFor="username">Userame</label>
             </div>
         </div>
         <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">

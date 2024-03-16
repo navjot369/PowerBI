@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Section1() {
   return (
-    <div className="justify-center my-11 mx-auto">
+    <div className="justify-center mt-24 mb-11 mx-auto">
       <div className="flex flex-col sm:flex-row w-full mx-auto max-w-6xl items-stretch">
         <div className="px-11">
           <div className="text-3xl text-center sm:text-left sm:text-5xl font-bold">
