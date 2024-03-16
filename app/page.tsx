@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <NavMenu login="Simran"/>
       <HeroSection />
-      <VideoSec />
+      {/* <VideoSec /> */ /* Will be shown after correct video provided */}
       <Section1 />
       <Section2 />
       <Section5 />

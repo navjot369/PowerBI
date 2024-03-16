@@ -37,7 +37,7 @@ export default function Section6() {
           image="/Images/yatin.jpg"
         />
         <Review
-          title="Yojit Patani"
+          title="Yojit Patni"
           desp="Transformative Power BI course - accelerated my data analytics skills significantly."
           image="/Images/yojit.jpg"
         />
