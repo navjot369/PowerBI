@@ -6,8 +6,8 @@ export default function Section2() {
     <div className="mx-auto lg:max-w-6xl flex flex-wrap justify-evenly p-4 md:p-11">
       <Box
         banner="/Images/data-science.jpg"
-        title="Power BI Assured"
-        desp="with Skill craft"
+        title="BI-The Next AI"
+        desp="with Courses for careers"
         linkSrc="/program"
       />
     </div>

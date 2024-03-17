@@ -90,12 +90,12 @@ export default function NavMenu({ login }: { login: string }) {
           </Link>
         ) : (
           <div className="hidden min-[1000px]:flex flex-row items-center w-fit">
-            <Link
+            {/* <Link
               href="/profile"
               className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4  h-fit hover:bg-white hover:text-[#078181]"
             >
               Profile
-            </Link>
+            </Link> */}
             <button
               onClick={handleLogOut}
               className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-full flex items-center px-4 h-fit hover:bg-white hover:text-[#078181]"
@@ -136,12 +136,12 @@ export default function NavMenu({ login }: { login: string }) {
             </Link>
           ) : (
             <div className="flex flex-col items-center w-fit">
-              <Link
+              {/* <Link
                 href="/profile"
                 className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-xl flex items-center px-4 my-1 h-fit hover:bg-white hover:text-[#078181]"
               >
                 Profile
-              </Link>
+              </Link> */}
               <button
                 onClick={handleLogOut}
                 className="text-md font-bold border-2 border-[#078181] text-white mx-2 bg-[#078181] rounded-xl flex items-center px-4 my-1 h-fit hover:bg-white hover:text-[#078181]"

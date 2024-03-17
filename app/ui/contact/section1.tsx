@@ -48,7 +48,7 @@ export default function Sec1() {
   const toggleRefunds = () => setShowRefunds(!showRefunds);
 
   return (
-    <div className="flex flex-col md:flex-row pt-24 max-w-7xl mx-auto mb-14 md:mb-24">
+    <div className="flex flex-col md:flex-row pt-24 max-w-7xl mx-auto mb-14 md:mb-24 items-center">
       <div className="w-full md:w-1/2 px-4 md:px-11 flex flex-col justify-between items-stretch">
         <div className="text-6xl font-bold">Contact Us</div>
         <div className="w-28 my-2 h-1 bg-[repeating-linear-gradient(135deg,transparent_0%,transparent_10%,#ff9635_10%,#ff9635_30%)]"></div>
@@ -61,9 +61,7 @@ export default function Sec1() {
               height="50"
               alt="Icons"
             />
-            <span className="">
-              Chitkara University ,Rajpura, Punjab, 147001
-            </span>
+            <span className="">Old Bishan Nagar, Patiala - 147001 , Punjab, India</span>
           </div>
           <div className="my-2 flex items-end text-[#9f9696] text-lg">
             <Image
@@ -88,42 +86,24 @@ export default function Sec1() {
         </div>
         <div className="flex">
           <span className="text-lg font-bold mr-8">Keep in touch</span>
-          <Link href="" className="mx-2">
+          <Link href="https://www.linkedin.com/company/coursesforcareers-dot-tech/" className="ml-11">
             <Image
-              className="w-7 hover:scale-110 duration-300"
-              src="/Icons/facebook.png"
+              src="/Icons/linkedin.svg"
               width="50"
               height="50"
-              alt="Social Media Icon"
+              className="w-8 h-8 mr-2 hover:scale-105 duration-300"
+              alt="Social media Logo"
             />
-          </Link>
-          <Link href="" className="mx-2">
+            </Link>
+            <Link href="https://www.instagram.com/coursesforcareers.tech?igsh=a2VoYmlrdXdsMHRr">
             <Image
-              className="w-7 hover:scale-110 duration-300"
               src="/Icons/instagram.png"
               width="50"
               height="50"
-              alt="Social Media Icon"
+              className="w-8 h-8 mr-2 hover:scale-105 duration-300"
+              alt="Social media Logo"
             />
-          </Link>
-          <Link href="" className="mx-2">
-            <Image
-              className="w-7 hover:scale-110 duration-300"
-              src="/Icons/twitter.png"
-              width="50"
-              height="50"
-              alt="Social Media Icon"
-            />
-          </Link>
-          <Link href="" className="mx-2">
-            <Image
-              className="w-7 hover:scale-110 duration-300"
-              src="/Icons/youtube.png"
-              width="50"
-              height="50"
-              alt="Social Media Icon"
-            />
-          </Link>
+            </Link>
         </div>
         <div>
           <iframe
@@ -266,9 +246,6 @@ export default function Sec1() {
       <div className="w-full md:w-1/2 px-0 md:px-11">
         <div className="bg-white md:shadow-2xl rounded-2xl px-4 md:px-11 py-6">
           <div className="text-3xl font-bold my-8">Have Questions?</div>
-          <div className="text-[#9f9696]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
           <form onSubmit={handleSubmit}>
             <input
               className="bg-[#fafafa] p-4 border-[#444] border-[1px] border-opacity-30 w-full my-3 focus:bg-white focus:border-dotted outline-none font-light"

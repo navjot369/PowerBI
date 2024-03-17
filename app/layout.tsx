@@ -15,6 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="/logo_onlyicon.png" sizes="any" />
+      </head>
       <body className={poppins.className + "  box-border p-0"}>{children}</body>
       <Script src="https://checkout.razorpay.com/v1/checkout.js" />
     </html>

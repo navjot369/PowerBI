@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex justify-around flex-wrap md:gap-4 w-[80%] ml-[10%] items-center ">
         <div className="flex flex-col items-center lg:items-between h-full justify-between sm:col-start-1 sm:col-end-3 lg:col-end-2">
           <Image
-            src="/white_logo.png"
+            src="/logo_white.png"
             width="200"
             height="150"
             alt="logo"
@@ -18,13 +18,16 @@ export default function Footer() {
           />
           {/* <div className="text-[#555] sm:px-11 lg:px-0 text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</div> */}
           <div className="flex flex-row align-center justify-center w-full">
+            <Link href="https://www.linkedin.com/company/coursesforcareers-dot-tech/">
             <Image
-              src="/Icons/facebook.png"
+              src="/Icons/linkedin.svg"
               width="50"
               height="50"
               className="w-8 h-8 mr-2"
               alt="Social media Logo"
             />
+            </Link>
+            <Link href="https://www.instagram.com/coursesforcareers.tech?igsh=a2VoYmlrdXdsMHRr">
             <Image
               src="/Icons/instagram.png"
               width="50"
@@ -32,20 +35,7 @@ export default function Footer() {
               className="w-8 h-8 mr-2"
               alt="Social media Logo"
             />
-            <Image
-              src="/Icons/twitter.png"
-              width="50"
-              height="50"
-              className="w-8 h-8 mr-2"
-              alt="Social media Logo"
-            />
-            <Image
-              src="/Icons/youtube.png"
-              width="50"
-              height="50"
-              className="w-8 h-8 mr-2"
-              alt="Social media Logo"
-            />
+            </Link>
           </div>
         </div>
         <div className="px-2 flex flex-col items-center lg:items-start">
