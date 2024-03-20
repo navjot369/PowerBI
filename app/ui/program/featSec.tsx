@@ -8,7 +8,7 @@ export default function FeatureSec() {
           Industry Ready BI Analyst
         </h2>
         <p className="w-full md:w-2/3 mx-auto text-center my-2 px-2">
-          Become a Power BI pro in a year with Skill Craft. Gain industry
+          Become a Power BI pro in a year with Courses for Carrer. Gain industry
           skills, work on real projects, learn from the best and Become
           Microsoft Certified analyst.
         </p>

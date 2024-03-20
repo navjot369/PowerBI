@@ -16,7 +16,7 @@ export default function PaymentSec() {
           Transform Your Lives
         </h2>
         <p className="w-full md:w-2/3 text-md text-center my-2">
-          Become a Part at Skill Craft Academy. Do check the Pricing Page once
+          Become a Part at Courses for Carrer. Do check the Pricing Page once
           and read all the Instructions. The price charged Below is a token
           Money for Help you and us!
         </p>

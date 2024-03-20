@@ -41,7 +41,7 @@ export default function NavMenu({ login }: { login: string }) {
               href="/program"
               className="text-md font-bold hover:text-[#444] px-2 uppercase min-[1030px]:px-4"
             >
-              Data Doesn&apos;t Lie
+              Programs
             </Link>
             <Link
               href="/team"
@@ -119,7 +119,7 @@ export default function NavMenu({ login }: { login: string }) {
             Home
           </Link>
           <Link href="/program" className="text-xl hover:text-[#444] px-4">
-            Data Doesn&apos;t Lie
+            Program
           </Link>
           <Link href="/team" className="text-xl hover:text-[#444] px-4">
             Meet the Team

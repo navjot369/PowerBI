@@ -5,7 +5,7 @@ export default function HeroSec() {
         <div className="max-w-6xl mx-auto h-[500px] flex items-center p-2 min-[820px]:p-11 min-[936px]:p-28">
           <div className="flex flex-col text-white text-center sm:text-left">
             <div className="text-5xl min-[630px]:text-6xl font-bold my-2 mt-12">
-              BI - The Next AI
+              Power Bi assured
             </div>
             <div className="text-3xl min-[630px]:text-3xl font-bold my-2">
               With Courses for Careers
