@@ -26,7 +26,7 @@ function Box({
   linkSrc: string;
 }) {
   return (
-    <div className="bg-[white] w-full m-2 flex flex-col md:flex-row justify-evenly items-center shadow-[4px_4px_10px_0_#088] hover:shadow-[4px_4px_10px_4px_#ccc] hover:scale-[1.01] transition-all duration-500 px-0 md:px-4 rounded-lg">
+    <div className="bg-[white] w-full m-2 flex flex-col md:flex-row justify-between items-center shadow-[4px_4px_10px_4px_#ccc] transition-all duration-500 px-0 md:px-4 rounded-lg">
       <div className="w-full md:w-1/2">
         <Image
           src={banner}
@@ -36,8 +36,8 @@ function Box({
           className="w-full rounded-lg"
         />
       </div>
-      <div className="px-4 py-8  flex flex-col items-start">
-        <div className="text-2xl md:text-5xl font-bold my-2 uppercase">
+      <div className="py-4 px-11 flex flex-col items-start md:w-1/2">
+        <div className="text-2xl md:text-5xl font-bold mt-4 uppercase text-[#444B58]">
           {title}
         </div>
         <div className="text-[#555] text-xl">{desp}</div>

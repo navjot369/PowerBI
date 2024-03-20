@@ -42,18 +42,20 @@ export default function Page({
   return (
     <div className="w-full px-4">
       <h1 className="text-center text-5xl font-bold mb-11">{module.title}</h1>
-      <div className="rounded-lg border-2 border-black mx-11 shadow-lg my-2 p-4 overflow-hidden">
-        <h3 className="text-3xl border-b-2 border-slate-600 pb-2">Videos</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="shadow-[1px_1px_10px_#078181] mx-2 my-2 p-4 overflow-hidden">
+        <h3 className="text-2xl text-center uppercase text-[#444B58] pb-2">Videos</h3>
         <VideoList videos={module.videos} linkLec={linkLec + "videos/"} />
       </div>
-      <div className="rounded-lg border-2 border-black mx-11 shadow-lg my-2 p-4 overflow-hidden">
-        <h3 className="text-3xl border-b-2 border-slate-600 pb-2">
+      <div className="shadow-[1px_1px_10px_#078181] mx-2 my-2 p-4 overflow-hidden">
+        <h3 className="text-2xl text-center uppercase text-[#444B58] pb-2">
           Assignment
         </h3>
         <AssingmentList
           assings={module.assignments}
           linkLec={linkLec + "assignment/"}
         />
+      </div>
       </div>
     </div>
   );

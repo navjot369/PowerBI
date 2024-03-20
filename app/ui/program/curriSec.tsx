@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { BeatLoader } from "react-spinners";
 
 const arrList = ["lessons", "hours", "tasks"];
-const arrSrc = ["/Icons/play.svg", "/Icons/time.svg", "Icons/tasks.svg"];
+const arrSrc = ["/Icons/play-circle.svg", "/Icons/time.svg", "Icons/tasks.svg"];
 
 export default function CurriculumSec() {
   const [data, setData] = useState({ course: { modules: [] } });
@@ -106,28 +106,27 @@ function Box({
     }
   }
   return (
-    <div className="w-full rounded-xl bg-[#f6f6f6] hover:bg-[#f3f5f5] duration-500 border-2 border-[#ddd7d7] hover:shadow-2xl">
-      <div className="w-full rounded-xl p-1 sm:p-4">
+    <div className="w-full rounded-2xl bg-[#f6f6f6] overflow-hidden hover:bg-[#f3f5f5] duration-500 shadow-md hover:shadow-2xl group">
+      <div className="w-full h-72 md:h-80 overflow-hidden">
         <Image
-          className="rounded-xl h-72 md:h-80"
+          className="h-72 md:h-80 group-hover:scale-105 duration-500"
           src={imgSrc}
           height="500"
           width="1000"
           alt="course banner"
         />
       </div>
-      <div className="p-2 sm:p-6">
-        <div className="flex justify-between items-center">
-          <div>
-            <h3 className="text-4xl font-bold mb-4">{title}</h3>
-            <div className="flex w-fit flex-row items-center mb-4 gap-2 sm:gap-6">
+      <div className="p-2 sm:p-6 text-[#444B58]">
+        <h3 className="text-4xl mb-4 text-[#444B58]">{title}</h3>
+            <div className="flex w-full flex-row justify-between items-center">
+              <div className="flex items-center gap-2 sm:gap-6">
               <span className="flex gap-2">
                 {" "}
                 <Image
                   className="grayscale"
                   src={arrSrc[0]}
-                  width="20"
-                  height="20"
+                  width="21"
+                  height="21"
                   alt="icons"
                 />
                 {vid.length} Lessons
@@ -143,13 +142,12 @@ function Box({
                 />
                 {asg.length} Assignments
               </span>
-            </div>
-          </div>
-          <Link
+              </div>
+              <Link
             href={link}
-            className="flex mx-1 md:mx-11 hover:scale-110 justify-center items-center w-14 h-14 pl-1 pt-2 text-6xl text-black rounded-full duration-1000 border-2 border-black hover:shadow-lg "
-          >&#x2C3;</Link>
-        </div>
+            className="flex mx-4 hover:text-[#078181] hover:bg-transparent justify-center items-center py-1 px-4 font-light text-2xl text-white bg-[#078181] rounded-full duration-300 border-2 border-[#078181] hover:shadow-lg">Start</Link>
+            </div>
+          
         <div className="text-sm">{desp}</div>
       </div>
     </div>
