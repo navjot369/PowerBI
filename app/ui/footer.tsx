@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div
-      className="w-full shadow-inner bg-[#078181] pt-11"
+      className="w-full shadow-inner bg-[#078181] pt-11 z-0 relative"
       style={{ backgroundColor: "#078181" }}
     >
       <div className="flex justify-around flex-wrap md:gap-4 w-[80%] ml-[10%] items-center ">
