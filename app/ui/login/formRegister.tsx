@@ -4,6 +4,7 @@ import {useState, useRef, useEffect} from 'react';
 import { apiLink } from '@/app/api';
 import axios from 'axios';
 import BeatLoader from "react-spinners/BeatLoader";
+import clsx from 'clsx';
 
 export default function FormRegister() {
     const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function FormRegister() {
         "email" : "",
         "password" : ""
     });
+    const [part, setPart] = useState(1);
     const [resMessage, setResMessage] = useState("");
     const [isLoading, setLoading] = useState(false);
     const [showPass1, setShowPass1] = useState(false);
@@ -68,10 +70,12 @@ export default function FormRegister() {
             } else {
                 if(error.response.data.message === "Error registering user") {
                     setResMessage("This E-mail is already registred.");
+                    setPart(1);
                     mailRef.current.focus();
                 }
                 else if(error.response.data.message === "User already exists.") {
                     setResMessage("This username is already taken");
+                    setPart(2);
                     userRef.current.focus();
                 }
             }
@@ -80,28 +84,32 @@ export default function FormRegister() {
     }
     return(<form className="w-full flex flex-col justify-center items-center mt-11" onSubmit={handleSubmit}>
         <div className="text-md text-red-700 font-bold">{resMessage}</div>
-        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+        <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
+        {"hidden" : part == 2})}>
             <div className="pt-2">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={nameRef} 
                 value={formData.name} type="text" name="name" onChange={handleChange} id="name" placeholder="." disabled={false} required></input>
                 <label className="absolute left-2 top-0 duration-300" htmlFor="name">Name</label>
             </div>
         </div>
-        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+        <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
+        {"hidden" : part == 2})}>
             <div className="pt-2">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={mailRef} 
                 value={formData.email} type="text" name="email" onChange={handleChange} id="email" placeholder="." disabled={false} required></input>
                 <label className="absolute left-2 top-0 duration-300" htmlFor="email">E-mail</label>
             </div>
         </div>
-        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+        <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
+        {"hidden" : part == 1})}>
             <div className="pt-2" title="For user Athentication">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={userRef} 
                 value={formData.username} type="text" name="username" onChange={handleChange} id="username" placeholder="." disabled={false} required></input>
                 <label className="absolute left-2 top-0 duration-300" htmlFor="username">Userame</label>
             </div>
         </div>
-        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+        <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
+        {"hidden" : part == 1})}>
             <div className="pt-2">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={passRef} 
                 value={formData.password} name="password" type={showPass1?"text":"password"} onChange={handleChange} onFocus={() => setValidShow(true)} onBlur={() => setValidShow(false)} id="pass" placeholder="." disabled={false} required></input>
@@ -110,7 +118,8 @@ export default function FormRegister() {
             </div>
             {validShow && <ValidPass ele = {formData.password} />}
         </div>
-        <div className="bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative">
+        <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
+        {"hidden" : part == 1})}>
             <div className="pt-2">
                 <input className="outline-none auth-input w-72 placeholder:text-white disabled:bg-white disabled:text-slate-500" ref={pass2Ref} 
                 value={confirmPass} name="passConfirm" onBlur={() => setConfShow(false)} type={showPass2?"text":"password"} onChange={handleConfirm} id="pass2" placeholder="." disabled={false} required></input>
@@ -119,9 +128,12 @@ export default function FormRegister() {
             </div>
             {confShow && <ConfirmShow pass1 = {formData.password} pass2 = {confirmPass} />}
         </div>
-        <div className="w-full">{ isLoading? 
+        <button className={clsx("w-full p-2 text-xl text-white flex h-11 justify-center items-center my-2 rounded-xl bg-[#1e4847] hover:brightness-150 font-bold duration-200", {"hidden" : part == 2})} type="button" onClick={() => {setPart(2)}}>Next</button>
+        <div className={clsx("w-full", {"hidden" : part == 1})}>{ isLoading? 
         <div className="w-full p-3 flex h-11 justify-center items-center rounded-xl my-2 bg-[#289492]"><BeatLoader color="white" loading= {true} size={10} aria-label="Loading Spinner" data-testid="loader"/></div>
-        :<button className="w-full p-2 text-xl text-white flex h-11 justify-center items-center my-2 rounded-xl bg-[#1e4847] hover:brightness-150 font-bold duration-200" type="submit">Continue</button>
+        :<div className="flex items-center gap-2">
+            <button className="text-white w-fit px-2 text-2xl h-11 rounded-xl bg-[#1e4847] hover:brightness-150 font-bold duration-200" onClick={() => setPart(1)} type="button">&lt;</button>
+            <button className="w-full p-2 text-xl text-white flex h-11 justify-center items-center my-2 rounded-xl bg-[#1e4847] hover:brightness-150 font-bold duration-200" type="submit">Continue</button></div>
         }</div>
     </form>);
 }
