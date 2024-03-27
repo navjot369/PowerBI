@@ -61,7 +61,9 @@ export default function Sec1() {
               height="50"
               alt="Icons"
             />
-            <span className="">Old Bishan Nagar, Patiala - 147001 , Punjab, India</span>
+            <span className="">
+              Old Bishan Nagar, Patiala - 147001 , Punjab, India
+            </span>
           </div>
           <div className="my-2 flex items-end text-[#9f9696] text-lg">
             <Image
@@ -86,7 +88,10 @@ export default function Sec1() {
         </div>
         <div className="flex">
           <span className="text-lg font-bold mr-8">Keep in touch</span>
-          <Link href="https://www.linkedin.com/company/coursesforcareers-dot-tech/" className="ml-11">
+          <Link
+            href="https://www.linkedin.com/company/coursesforcareers-dot-tech/"
+            className="ml-11"
+          >
             <Image
               src="/Icons/linkedin.svg"
               width="50"
@@ -94,8 +99,8 @@ export default function Sec1() {
               className="w-8 h-8 mr-2 hover:scale-105 duration-300"
               alt="Social media Logo"
             />
-            </Link>
-            <Link href="https://www.instagram.com/coursesforcareers.tech?igsh=a2VoYmlrdXdsMHRr">
+          </Link>
+          <Link href="https://www.instagram.com/coursesforcareers.tech?igsh=a2VoYmlrdXdsMHRr">
             <Image
               src="/Icons/instagram.png"
               width="50"
@@ -103,14 +108,13 @@ export default function Sec1() {
               className="w-8 h-8 mr-2 hover:scale-105 duration-300"
               alt="Social media Logo"
             />
-            </Link>
+          </Link>
         </div>
         <div>
           <iframe
-            className="h-44 w-full my-8"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.1751352098286!2d76.65720287664696!3d30.516086474689523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1704803282071!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.662316321894!2d76.41235146605409!3d30.34005069964686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3910285e5d98f7cf%3A0xaab5e6def4c1ea78!2sOld%20Bishan%20Nagar%2C%20Patiala%2C%20Punjab%20147001!5e0!3m2!1sen!2sin!4v1711552674258!5m2!1sen!2sin"
             width="600"
-            height="450"
+            height="200"
             loading="lazy"
           ></iframe>
         </div>
