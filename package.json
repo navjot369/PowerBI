@@ -14,6 +14,7 @@
     "next": "14.0.4",
     "razorpay": "^2.9.2",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
     "react-spinners": "^0.13.8"
