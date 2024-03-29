@@ -27,7 +27,7 @@ export default function PaymentSec() {
         <Box
           top="BI - The Next AI with Courses for careers"
           desp=""
-          price={199}
+          price={4999}
           arrTick={[
             "Bonuses upto ₹3000",
             "Free Power BI Master Guides",
@@ -208,9 +208,9 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         <h1 className="font-bold text-bold text-2xl break-words">{top}</h1>
         <h3 className="my-4 text-slate-300">{desp}</h3>
         <h3 className="text-4xl font-bold">
-          <span className="text-3xl line-through text-gray-500">
-            &#8377; 500
-          </span>{" "}
+          {/* <span className="text-3xl line-through text-gray-500">
+            &#8377; 4999
+          </span>{" "} */}
           &#8377; {price}
         </h3>
       </div>
@@ -222,9 +222,9 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       <div className="my-6 absolute left-4 bottom-4 group">
         <button
           className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
-          onClick={paymentHandler}
+          // onClick={paymentHandler}
         >
-          Start Learning{" "}
+          We are launching soon{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
         </button>
         {/* <button
