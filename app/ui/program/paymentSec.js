@@ -79,7 +79,7 @@ export default function PaymentSec() {
 }
 
 function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
-  const [PaymentSuccess, setPaymentStatus] = useState(true);
+  const [PaymentSuccess, setPaymentStatus] = useState(false);
   const router = useRouter();
   const tickTemp = arrTick.map((item, ind) => (
     <div key={ind} className="flex flex-row my-2">
@@ -153,7 +153,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           // const response = await axios.post(apiLink + "/enroll");
           console.log(response);
           if (response.data.message == "success") {
-            alert("thanks for paying");
+            setPaymentStatus(true);
           }
         }
         console.log(jsonRes, "dddd");
@@ -193,14 +193,17 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
 
   return (
     <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
+
       {PaymentSuccess && 
-      <div className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40" >
-        <div className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center">
+      <div className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40" onClick={() => setPaymentStatus(false)}>
+        <div className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center py-4" onClick={(e) => {e.stopPropagation()}}>
           <Tick />
-          <h1 className="text-4xl text-black font-bold">Payment Successful</h1>
+          <h1 className="text-4xl text-black font-bold">Payment Successful !!</h1>
+          <Link href="/courses/65dadfed4f55cc9363c750e4/lecture/1/videos/1" className="bg-[#3091a4] text-white text-xl rounded-full py-2 pl-4 my-1 pr-6 group hover:pr-4 duration-300">Start Learning <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span></Link>
           <button className="text-lg text-slate-600 hover:text-slate-900 p-4 font-bold mt-4" onClick={() => {setPaymentStatus(false)}}>&#10007;&nbsp;Close</button>
         </div>
       </div>}
+
       <div className="bg-[#3091a4] p-6">
         <h1 className="font-bold text-bold text-2xl break-words">{top}</h1>
         <h3 className="my-4 text-slate-300">{desp}</h3>
@@ -219,11 +222,12 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       <div className="my-6 absolute left-4 bottom-4 group">
         <button
           className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
-          // onClick={paymentHandler}
+          onClick={paymentHandler}
         >
-          We are launching soon{" "}
+          Start Learning{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
         </button>
+        <button onClick={() => {setPaymentStatus(true)}}>success</button>
         {/* <button
           onClick={() => {
             test();
