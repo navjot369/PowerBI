@@ -227,7 +227,6 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           Start Learning{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
         </button>
-        <button onClick={() => {setPaymentStatus(true)}}>success</button>
         {/* <button
           onClick={() => {
             test();
