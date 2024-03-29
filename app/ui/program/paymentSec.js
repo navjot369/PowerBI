@@ -1,8 +1,10 @@
 "use client";
 
 import { apiLink } from "@/app/api";
+import { useState } from 'react';
 import Image from "next/image";
 import AppLogo from "@/app/ui/logo";
+import Tick from '@/app/ui/payment_success/tickAnim';
 
 import Link from "next/link";
 import { Router, useRouter } from "next/navigation";
@@ -77,6 +79,7 @@ export default function PaymentSec() {
 }
 
 function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
+  const [PaymentSuccess, setPaymentStatus] = useState(true);
   const router = useRouter();
   const tickTemp = arrTick.map((item, ind) => (
     <div key={ind} className="flex flex-row my-2">
@@ -184,12 +187,20 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     );
     // const response = await axios.post(apiLink + "/enroll");
     if (response.data.message == "success") {
-      alert("thanks for paying");
+      setPaymentStatus(true);
     }
   };
 
   return (
     <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
+      {PaymentSuccess && 
+      <div className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40" >
+        <div className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center">
+          <Tick />
+          <h1 className="text-4xl text-black font-bold">Payment Successful</h1>
+          <button className="text-lg text-slate-600 hover:text-slate-900 p-4 font-bold mt-4" onClick={() => {setPaymentStatus(false)}}>&#10007;&nbsp;Close</button>
+        </div>
+      </div>}
       <div className="bg-[#3091a4] p-6">
         <h1 className="font-bold text-bold text-2xl break-words">{top}</h1>
         <h3 className="my-4 text-slate-300">{desp}</h3>
