@@ -23,7 +23,7 @@ export default function PaymentSec() {
           Money for Help you and us!
         </p>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center gap-4">
         <Box
           top="BI - The Next AI with Courses for careers"
           desp=""
@@ -38,6 +38,21 @@ export default function PaymentSec() {
           arrMinus={[]}
           arrPlus={[]}
           courseId="65dadfed4f55cc9363c750e4"
+        />
+        <Box
+          top="BI - The Next AI with Courses for careers"
+          desp=""
+          price={5499}
+          arrTick={[
+            "Bonuses upto ₹3000",
+            "Free Power BI Master Guides",
+            "Job Assitance to a BI Analyst",
+            "Power BI Templates to Lucky Winners",
+            "10 Days to a Power BI Expert",
+          ]}
+          arrMinus={[]}
+          arrPlus={[]}
+          courseId="" // for those 3 modules
         />
         {/* <Box
           top="Pro"
@@ -127,7 +142,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       key: process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
       amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency,
-      name: "Courses For Career", //your business name
+      name: "Courses For Careers", //your business name
       description: "Purchase Course",
       image:
         "https://coursesforcareers.tech/_next/image?url=%2Fcolour_logo.png&w=256&q=75",
@@ -192,7 +207,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
   };
 
   return (
-    <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
+    <div className="w-full md:w-full mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
 
       {PaymentSuccess && 
       <div className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40" onClick={() => setPaymentStatus(false)}>
