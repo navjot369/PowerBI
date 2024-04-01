@@ -14,20 +14,21 @@ body {
   background: white;
 }
 .auth-input + label {
-  top: 0;
-  font-size: 12px;
+  top: -20px;
+  font-size: 18px;
   font-weight: 500;
   color: #555;
+  background-color: white;
   transform: none;
 }
 .auth-input:placeholder-shown + label {
   top: 50%;
-  font-size: 16px;
+  font-size: 18px;
   transform: translateY(-50%);
 }
 .auth-input:focus + label{
-  top: 0;
-  font-size: 12px;
+  top: -20px;
+  font-size: 18px;
   transform: none;
 }
 

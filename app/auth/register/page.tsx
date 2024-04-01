@@ -1,6 +1,6 @@
 
 
-import FormRegister from '@/app/ui/login/formRegister'; 
+import FormRegister from '@/app/ui/register/formRegister'; 
 import Link from 'next/link';
 
 export default function Page() {
