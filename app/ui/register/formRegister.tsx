@@ -1,5 +1,7 @@
 'use client'
 
+//purana codebase
+
 import {useState, useRef, useEffect} from 'react';
 import { apiLink } from '@/app/api';
 import axios from 'axios';
@@ -17,10 +19,7 @@ export default function FormRegister() {
     const [resMessage, setResMessage] = useState("");
     const [isLoading, setLoading] = useState(false);
     const [showPass1, setShowPass1] = useState(false);
-    const [showPass2, setShowPass2] = useState(false);
-    const [confirmPass, setConfirmPass] = useState("");
-    const [validShow, setValidShow] = useState(false);
-    const [confShow, setConfShow] = useState(false);
+    const [showPass2, setShowPass2] = useState(false);{}
     const userRef: any = useRef(null);
     const passRef: any = useRef(null);
     const nameRef: any = useRef(null);
@@ -83,7 +82,6 @@ export default function FormRegister() {
         }
     }
     return(<form className="w-full flex flex-col justify-center items-center mt-11" onSubmit={handleSubmit}>
-        <div className="text-md text-red-700 font-bold">{resMessage}</div>
         <div className={clsx("bg-white h-11 p-2 my-2 rounded-xl grid grid-cols-[1fr] grid-rows-1 items-center relative", 
         {"hidden" : part == 2})}>
             <div className="pt-2">
