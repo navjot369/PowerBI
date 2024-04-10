@@ -44,6 +44,8 @@ export default function Page({ params }: { params: any }) {
         </div>
       </div>
 
+    
+
       <div className="grid grid-cols-2 w-full bg-slate-200"></div>
       <h1 className="text-6xl font-bold">{videoData.title}</h1>
       <div className="bg-slate-200 py-1 px-4 rounded-lg mt-11 flex items-center">
