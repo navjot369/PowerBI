@@ -135,31 +135,119 @@ export default function Sec1() {
           <div className="bg-white rounded-lg p-8 max-w-4xl">
             <h2 className="text-2xl font-bold mb-4">Terms and Conditions</h2>
             <div className="h-[450px] overflow-scroll">
-              By enrolling in any course offered by CoursesForTech, you agree to
-              abide by these terms and conditions. Payment: Payment for courses
-              must be made in full prior to accessing course materials unless
-              otherwise stated. Course Access: Upon payment, you will be granted
-              access to the course materials for the duration specified in the
-              course description. Intellectual Property: All course materials,
-              including but not limited to videos, texts, and assessments, are
-              the intellectual property of CoursesForTech and may not be
-              distributed or reproduced without permission. Refunds: Refunds are
-              only available within the first 7 days of course enrollment,
-              provided no more than 20% of the course materials have been
-              accessed. Code of Conduct: Participants must conduct themselves
-              respectfully in all course interactions, refraining from
-              harassment or discrimination based on race, gender, religion, or
-              any other protected characteristic. Disclaimer: CoursesForTech
-              endeavors to provide accurate and up-to-date information, but does
-              not guarantee the completeness or accuracy of course content.
-              Modification of Terms: CoursesForTech reserves the right to modify
-              these terms and conditions at any time, with changes being
-              effective upon posting on the CoursesForTech website. Termination
-              of Access: CoursesForTech reserves the right to terminate access
-              to courses for individuals who violate these terms and conditions
-              or engage in disruptive behavior. By enrolling in a course with
-              CoursesForTech, you acknowledge that you have read, understood,
-              and agreed to abide by these terms and conditions.{" "}
+              <h1 className="text-xl font-bold">
+                {" "}
+                Please Read The Following Carefully
+              </h1>{" "}
+              <br />
+              These terms and conditions ("Terms and Conditions") govern the
+              usage of the website coursesforcareers.tech ("Website"). In these
+              Terms and Conditions, "Courses for Careers" is referred to as the
+              "Company," "us," or "we." "You" refers to the user or a paying
+              customer. If you represent a company or grant access to company
+              products, you agree to bear full responsibility for any damages or
+              indemnification that may rightfully be claimed against the
+              customer. The Courses for Careers website (the 'Site'), the
+              educational services provided through the site, and the content
+              (the 'Products') are owned, operated, and maintained, as
+              applicable, by Courses for Careers ('we', 'our', 'us', or the
+              'Company'). The Site, Products, and Content are collectively
+              referred to as the 'Company Products'. By (a) using or accessing
+              the Company Products, including, but not limited to, downloading
+              or accessing, (b) offering a Course through the Site or through
+              Software; you agree to the terms and conditions outlined in these
+              Terms of Use (the "Terms"). BY UTILIZING THIS WEBSITE OR ITS
+              PRODUCTS AND SERVICES, YOU CONFIRM AND WARRANT THAT YOU HAVE READ,
+              UNDERSTOOD, AND CONSENT TO BE BOUND BY THESE TERMS. THE COMPANY’S
+              PRIVACY POLICY CAN BE ACCESSED AT
+              coursesforcareers.tech/privacy-policy ('Privacy Policy'). IF YOU
+              DO NOT AGREE TO THESE TERMS, YOU MUST REFRAIN FROM USING – AND ARE
+              NOT PERMITTED TO USE – ALL OR ANY PART OF THE COMPANY’S WEBSITE
+              AND ITS PRODUCTS OR SERVICES (AS DEFINED BELOW).{" "}
+              <h2 className="font-bold my-2">
+                Please read them carefully before you use the services of this
+                site.
+              </h2>{" "}
+              <ul className="list-disc gap-2 flex flex-col">
+                <li>
+                  You are expected to utilize this platform in a lawful manner,
+                  adhering to the terms and conditions outlined herein and
+                  abiding by the privacy policy.
+                </li>
+                <li>
+                  Under no circumstances will Courses for Careers be held liable
+                  for alterations in the content provided on the website or
+                  through its offerings, encompassing errors, omissions, or any
+                  resultant loss or damage arising from the use or exposure to
+                  such content, including materials disseminated via email,
+                  blogs, or other resources.
+                </li>
+                <li>
+                  Our services are accessible to all internet users free of
+                  charge. However, we disclaim responsibility for expenses
+                  incurred due to hardware, software, or internet service
+                  provider fees.
+                </li>
+                <li>
+                  Users are solely responsible for ensuring the proper
+                  functioning of their computer hardware and internet
+                  connectivity.
+                </li>
+                <li>
+                  Access to certain sections of the site may necessitate the use
+                  of login credentials, and Courses for Careers retains the
+                  right to restrict access to services for users who fail to
+                  comply with these requirements.
+                </li>
+                <li>
+                  While we endeavor to provide uninterrupted service, we do not
+                  guarantee continuous access.
+                </li>
+                <li>
+                  Courses for Careers assumes no responsibility beyond specified
+                  limits for network or server issues encountered by users.
+                </li>
+              </ul>
+              <ul className="list-disc gap-2 flex flex-col">
+                <li>
+                  You are expected to utilize this platform in a lawful manner,
+                  adhering to the terms and conditions outlined herein and
+                  abiding by the privacy policy.
+                </li>
+                <li>
+                  Under no circumstances will Courses for Careers be held liable
+                  for alterations in the content provided on the website or
+                  through its offerings, encompassing errors, omissions, or any
+                  resultant loss or damage arising from the use or exposure to
+                  such content, including materials disseminated via email,
+                  blogs, or other resources.
+                </li>
+                <li>
+                  Our services are accessible to all internet users free of
+                  charge. However, we disclaim responsibility for expenses
+                  incurred due to hardware, software, or internet service
+                  provider fees.
+                </li>
+                <li>
+                  Users are solely responsible for ensuring the proper
+                  functioning of their computer hardware and internet
+                  connectivity.
+                </li>
+                <li>
+                  Access to certain sections of the site may necessitate the use
+                  of login credentials, and Courses for Careers retains the
+                  right to restrict access to services for users who fail to
+                  comply with these requirements.
+                </li>
+                <li>
+                  While we endeavor to provide uninterrupted service, we do not
+                  guarantee continuous access.
+                </li>
+                <li>
+                  Courses for Careers assumes no responsibility beyond specified
+                  limits for network or server issues encountered by users.
+                </li>
+              </ul>
             </div>
             <button
               className="text-blue-500 hover:text-blue-700"
@@ -195,55 +283,67 @@ export default function Sec1() {
               Policy. For the purposes of this Policy, "Personal Data'' refers
               to any information that can be used to identify you as an
               individual. <br />
-              <h2 className="font-bold">1. COLLECTION OF INFORMATION</h2> As a visitor, you are
-              welcome to explore our Website to learn more about Courses For
-              Careers. Providing Personal Data is not mandatory if you are
-              solely visiting. During your visit to the Site, we collect and
-              retain certain information to enhance security, analyze
-              advancements, and administer the Website to enhance customer
-              experience. We employ this information to scrutinize traffic
-              patterns on our Website to optimize benefits for our visitors.
-              Personal Data is only collected when you register with us, express
-              interest in obtaining information about our products and services,
-              engage in activities on our Website, or contact us. We will only
-              collect your Personal Information when there is a legitimate and
-              valid reason to do so, such as to comply with regulatory and legal
-              obligations, to perform our contract with you, or to take
-              necessary steps at your request before entering into a legal
-              contract. Additionally, we may collect Personal Information based
-              on our legitimate interests or with your consent. Legitimate
-              interest refers to when we have a valid commercial or business
-              reason to utilize your information. In specific cases, we may also
-              have a legal obligation to collect personal data from you or
-              require personal information to protect your interests or those of
-              others (e.g., to prevent payment fraud or confirm identity). Our
-              primary goal in collecting your Personal Information is to offer
-              you a secure, efficient, seamless, and tailored experience. This
-              enables us to provide online courses, study materials, and
-              tutorials that are highly likely to meet your needs and to
-              customize our Website to enhance your experience. The information
-              we obtain from you assists us in personalizing and continuously
-              improving customer experience on our Website. We do not
-              voluntarily share this information with any third parties, nor do
-              we utilize it for any purposes other than those outlined herein.
-              To register on our website or complete the purchase process of any
-              of our courses, we may collect the following information
-              voluntarily provided by you through our contact forms, chat, or
-              phone sessions, such as: 
+              <h2 className="font-bold">1. COLLECTION OF INFORMATION</h2> As a
+              visitor, you are welcome to explore our Website to learn more
+              about Courses For Careers. Providing Personal Data is not
+              mandatory if you are solely visiting. During your visit to the
+              Site, we collect and retain certain information to enhance
+              security, analyze advancements, and administer the Website to
+              enhance customer experience. We employ this information to
+              scrutinize traffic patterns on our Website to optimize benefits
+              for our visitors. Personal Data is only collected when you
+              register with us, express interest in obtaining information about
+              our products and services, engage in activities on our Website, or
+              contact us. We will only collect your Personal Information when
+              there is a legitimate and valid reason to do so, such as to comply
+              with regulatory and legal obligations, to perform our contract
+              with you, or to take necessary steps at your request before
+              entering into a legal contract. Additionally, we may collect
+              Personal Information based on our legitimate interests or with
+              your consent. Legitimate interest refers to when we have a valid
+              commercial or business reason to utilize your information. In
+              specific cases, we may also have a legal obligation to collect
+              personal data from you or require personal information to protect
+              your interests or those of others (e.g., to prevent payment fraud
+              or confirm identity). Our primary goal in collecting your Personal
+              Information is to offer you a secure, efficient, seamless, and
+              tailored experience. This enables us to provide online courses,
+              study materials, and tutorials that are highly likely to meet your
+              needs and to customize our Website to enhance your experience. The
+              information we obtain from you assists us in personalizing and
+              continuously improving customer experience on our Website. We do
+              not voluntarily share this information with any third parties, nor
+              do we utilize it for any purposes other than those outlined
+              herein. To register on our website or complete the purchase
+              process of any of our courses, we may collect the following
+              information voluntarily provided by you through our contact forms,
+              chat, or phone sessions, such as:
               <ul className="list-disc">
-               <li><b>Personal Details:</b> Such as name, email
-              address, photograph, contact address, contact number, IP address,
-              or geographic location.</li>
-              <li><b>Identity Information:</b> Including mark
-              sheets, Aadhar/Voter ID/Passport details. </li>
-              <li><b>Billing Information:</b>
-              Such as credit/debit card numbers and billing addresses. </li>
-              <li><b>User Credentials:</b> Including usernames or passwords.</li>
-              <li><b>User Preferences:</b> Ratings, reviews, syllabus/course preferences, and account
-              settings. </li>
-              <li><b>Customer Interaction Data:</b> Information provided to us
-              through interactions with customer service, surveys, or
-              promotions.</li>
+                <li>
+                  <b>Personal Details:</b> Such as name, email address,
+                  photograph, contact address, contact number, IP address, or
+                  geographic location.
+                </li>
+                <li>
+                  <b>Identity Information:</b> Including mark sheets,
+                  Aadhar/Voter ID/Passport details.{" "}
+                </li>
+                <li>
+                  <b>Billing Information:</b>
+                  Such as credit/debit card numbers and billing addresses.{" "}
+                </li>
+                <li>
+                  <b>User Credentials:</b> Including usernames or passwords.
+                </li>
+                <li>
+                  <b>User Preferences:</b> Ratings, reviews, syllabus/course
+                  preferences, and account settings.{" "}
+                </li>
+                <li>
+                  <b>Customer Interaction Data:</b> Information provided to us
+                  through interactions with customer service, surveys, or
+                  promotions.
+                </li>
               </ul>
               &nbsp;&nbsp; We gather data concerning your engagements with us,
               including details about the device (such as laptop, computer,
@@ -275,69 +375,77 @@ export default function Sec1() {
               addresses, and certificates based on the user's profile and
               service requirements. Employing technologies like cookies, clear
               gifs, and log files, we endeavor to comprehend your interactions
-              with our platform and services to deliver an optimized experience.<br/>
-              <h2 className="font-bold">2. USAGE AND RETENTION OF INFORMATION</h2> We utilize the personal data
-              we gather, including your Personal Data, where it is essential for
-              delivering the requested services, meeting legal obligations,
-              safeguarding rights, or for customary business operations outlined
-              in this Policy. Your personal information is employed to furnish,
-              assess, and enhance our offerings, tailor a personalized
-              experience on our platform, communicate with you regarding your
-              account and our services, provide customer support, deliver
-              customized marketing materials, and address any fraudulent or
-              unlawful activities. Moreover, we utilize your personal
-              information to ascertain your general geographical location, offer
-              localized course content and classes, make recommendations,
-              identify your Internet Service Provider (ISP), and facilitate
-              prompt and effective responses to inquiries while upholding our
-              terms. Communication with you regarding our services, such as via
-              email, push notifications, text messaging, and online messaging
-              channels, allows us to furnish information about the latest
-              features, available content, offers, promotions, surveys, and
-              assist with operational requests like password resets. 
-              <h2 className="font-bold">3. COMMUNITY</h2> Courses for Careers is a community platform where we
-              provide various features enabling members to connect and
-              communicate in public or semi-public areas, including Forums and
-              Teams. We advise exercising discretion before posting in these
-              community spaces or disclosing personal information to others on
-              Courses for Careers. It's important to understand that any
-              personal information you share in these spaces may be accessed,
-              collected, or utilized by others, potentially leading to
-              unsolicited messages being sent to you. 
-              <h2 className="font-bold">4. SHARING AND DISCLOSING PERSONAL INFORMATION</h2> Courses for Careers utilizes third-party
-              Service Providers to execute tasks on our behalf or aid in
-              delivering services to you. These Service Providers are enlisted
-              for promotional, infrastructure, and IT services, as well as for
-              personalizing and optimizing our platform, processing payment
-              transactions, offering customer support, analyzing and improving
-              data, and conducting consumer surveys. During the provision of
-              these services, these Service Providers may have access to your
-              personal or other pertinent information. However, we strictly
-              prohibit them from utilizing or disclosing your personal
-              information except in the context of providing their designated
-              services. 
-              <h2 className="font-bold">5. SECURITY</h2> Courses for Careers is committed to taking
-              comprehensive precautions to safeguard personal information, both
-              in online and offline contexts. We employ security measures aimed
-              at minimizing the risks of data loss and misuse. Our platform is
-              equipped with standard SSL certification, ensuring a secure
-              connection between our server and users for any data transmission
-              or interaction. Protective measures include firewalls, data
-              encryption, physical access controls at our data centers, and
-              authorization controls for information access. User passwords are
-              encrypted using 64-bit encryption and securely stored, considering
-              that users often reuse passwords across multiple platforms,
-              mitigating the potential for theft, piracy, or unauthorized
-              access. Should you suspect any compromise of your Courses for
-              Careers account, please reach out to us via email at
-              coursesforcareers.tech@gmail.com 
-              <h2 className="font-bold uppercase">6. Changes to the policy</h2> Courses
-              for Careers retains the authority to modify this Privacy Policy as
-              deemed necessary periodically or as mandated by law. Any revisions
-              will be promptly posted on the website, and your initial use of
-              the website following these changes will signify your acceptance
-              of the updated terms of the Policy.
-              </div>
+              with our platform and services to deliver an optimized experience.
+              <br />
+              <h2 className="font-bold">
+                2. USAGE AND RETENTION OF INFORMATION
+              </h2>{" "}
+              We utilize the personal data we gather, including your Personal
+              Data, where it is essential for delivering the requested services,
+              meeting legal obligations, safeguarding rights, or for customary
+              business operations outlined in this Policy. Your personal
+              information is employed to furnish, assess, and enhance our
+              offerings, tailor a personalized experience on our platform,
+              communicate with you regarding your account and our services,
+              provide customer support, deliver customized marketing materials,
+              and address any fraudulent or unlawful activities. Moreover, we
+              utilize your personal information to ascertain your general
+              geographical location, offer localized course content and classes,
+              make recommendations, identify your Internet Service Provider
+              (ISP), and facilitate prompt and effective responses to inquiries
+              while upholding our terms. Communication with you regarding our
+              services, such as via email, push notifications, text messaging,
+              and online messaging channels, allows us to furnish information
+              about the latest features, available content, offers, promotions,
+              surveys, and assist with operational requests like password
+              resets.
+              <h2 className="font-bold">3. COMMUNITY</h2> Courses for Careers is
+              a community platform where we provide various features enabling
+              members to connect and communicate in public or semi-public areas,
+              including Forums and Teams. We advise exercising discretion before
+              posting in these community spaces or disclosing personal
+              information to others on Courses for Careers. It's important to
+              understand that any personal information you share in these spaces
+              may be accessed, collected, or utilized by others, potentially
+              leading to unsolicited messages being sent to you.
+              <h2 className="font-bold">
+                4. SHARING AND DISCLOSING PERSONAL INFORMATION
+              </h2>{" "}
+              Courses for Careers utilizes third-party Service Providers to
+              execute tasks on our behalf or aid in delivering services to you.
+              These Service Providers are enlisted for promotional,
+              infrastructure, and IT services, as well as for personalizing and
+              optimizing our platform, processing payment transactions, offering
+              customer support, analyzing and improving data, and conducting
+              consumer surveys. During the provision of these services, these
+              Service Providers may have access to your personal or other
+              pertinent information. However, we strictly prohibit them from
+              utilizing or disclosing your personal information except in the
+              context of providing their designated services.
+              <h2 className="font-bold">5. SECURITY</h2> Courses for Careers is
+              committed to taking comprehensive precautions to safeguard
+              personal information, both in online and offline contexts. We
+              employ security measures aimed at minimizing the risks of data
+              loss and misuse. Our platform is equipped with standard SSL
+              certification, ensuring a secure connection between our server and
+              users for any data transmission or interaction. Protective
+              measures include firewalls, data encryption, physical access
+              controls at our data centers, and authorization controls for
+              information access. User passwords are encrypted using 64-bit
+              encryption and securely stored, considering that users often reuse
+              passwords across multiple platforms, mitigating the potential for
+              theft, piracy, or unauthorized access. Should you suspect any
+              compromise of your Courses for Careers account, please reach out
+              to us via email at coursesforcareers.tech@gmail.com
+              <h2 className="font-bold uppercase">
+                6. Changes to the policy
+              </h2>{" "}
+              Courses for Careers retains the authority to modify this Privacy
+              Policy as deemed necessary periodically or as mandated by law. Any
+              revisions will be promptly posted on the website, and your initial
+              use of the website following these changes will signify your
+              acceptance of the updated terms of the Policy.
+            </div>
             <button
               className="text-blue-500 hover:text-blue-700"
               onClick={togglePrivacy}

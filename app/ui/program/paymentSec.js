@@ -1,10 +1,10 @@
 "use client";
 
 import { apiLink } from "@/app/api";
-import { useState } from 'react';
+import { useState } from "react";
 import Image from "next/image";
 import AppLogo from "@/app/ui/logo";
-import Tick from '@/app/ui/payment_success/tickAnim';
+import Tick from "@/app/ui/payment_success/tickAnim";
 
 import Link from "next/link";
 import { Router, useRouter } from "next/navigation";
@@ -100,7 +100,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     </div>
   ));
   //payment starts here
-  const amount = 500;
+  const amount = 5000;
   const currency = "INR";
   const receiptId = "qwsaq1";
 
@@ -112,7 +112,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     const response = await fetch(apiLink + "/pay/order", {
       method: "POST",
       body: JSON.stringify({
-        amount,
+        Amount,
         currency,
         receipt: receiptId,
       }),
@@ -125,7 +125,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
 
     var options = {
       key: process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
-      amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      Amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency,
       name: "Courses For Career", //your business name
       description: "Purchase Course",
@@ -190,19 +190,56 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       setPaymentStatus(true);
     }
   };
+  const [Amount, setAmount] = useState(price);
+  const [Code, setCode] = useState("");
+  const [CodeSuccess, setCodeSuccess] = useState(false);
+  const checkDiscount = () => {
+    if (Code === "") {
+      alert("please enter valid code");
+      setCodeSuccess(false);
+    } else {
+      if (Code === "cfc50") {
+        setCodeSuccess(true);
+        setAmount(parseInt(Amount / 2));
+      }
+    }
+  };
 
   return (
     <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
-
-      {PaymentSuccess && 
-      <div className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40" onClick={() => setPaymentStatus(false)}>
-        <div className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center py-4" onClick={(e) => {e.stopPropagation()}}>
-          <Tick />
-          <h1 className="text-4xl text-black font-bold">Payment Successful !!</h1>
-          <Link href="/courses/65dadfed4f55cc9363c750e4/lecture/1/videos/1" className="bg-[#3091a4] text-white text-xl rounded-full py-2 pl-4 my-1 pr-6 group hover:pr-4 duration-300">Start Learning <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span></Link>
-          <button className="text-lg text-slate-600 hover:text-slate-900 p-4 font-bold mt-4" onClick={() => {setPaymentStatus(false)}}>&#10007;&nbsp;Close</button>
+      {PaymentSuccess && (
+        <div
+          className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40"
+          onClick={() => setPaymentStatus(false)}
+        >
+          <div
+            className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center py-4"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <Tick />
+            <h1 className="text-4xl text-black font-bold">
+              Payment Successful !!
+            </h1>
+            <Link
+              href="/courses/65dadfed4f55cc9363c750e4/lecture/1/videos/1"
+              className="bg-[#3091a4] text-white text-xl rounded-full py-2 pl-4 my-1 pr-6 group hover:pr-4 duration-300"
+            >
+              Start Learning{" "}
+              <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
+            </Link>
+            <button
+              className="text-lg text-slate-600 hover:text-slate-900 p-4 font-bold mt-4"
+              onClick={() => {
+                setPaymentStatus(false);
+              }}
+            >
+              &#10007;&nbsp;Close
+            </button>
+          </div>
         </div>
-      </div>}
+      )}
 
       <div className="bg-[#3091a4] p-6">
         <h1 className="font-bold text-bold text-2xl break-words">{top}</h1>
@@ -211,7 +248,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           {/* <span className="text-3xl line-through text-gray-500">
             &#8377; 4999
           </span>{" "} */}
-          &#8377; {price}
+          &#8377; {Amount}
         </h3>
       </div>
       <div className="px-4 py-8">
@@ -219,14 +256,42 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         {minusTemp}
         {plusTemp}
       </div>
-      <div className="my-6 absolute left-4 bottom-4 group">
+      <div class="px-4 py-4 flex">
+        <input
+          type="text"
+          placeholder="hello"
+          class="max-h-[50px] box-border border border-gray-300 rounded "
+          value={Code}
+          onChange={(e) => {
+            setCode(e.target.value);
+          }}
+        />
         <button
+          class="p-2 bg-[#3091a4] px-6 text-white rounded hover:bg-[#3091a4]"
+          onClick={() => {
+            checkDiscount();
+          }}
+        >
+          apply coupon
+        </button>
+      </div>
+
+      {CodeSuccess ? (
+        <div className="text-green-500  text-sm px-6">
+          Successfully applied code
+        </div>
+      ) : (
+        <></>
+      )}
+
+      <div className="my-6 absolute left-4 bottom-4 group">
+        {/* <button
           className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
           // onClick={paymentHandler}
         >
           We are launching soon{" "}
           <span className="pl-2 group-hover:pl-4 duration-300">&rarr;</span>
-        </button>
+        </button> */}
         {/* <button
           onClick={() => {
             test();
@@ -234,14 +299,15 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         >
           test
         </button> */}
-        {/* <button
+
+        <button
           onClick={() => {
-            test();
+            paymentHandler();
           }}
           className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
         >
-          We are coming soon...
-        </button> */}
+          Pay
+        </button>
       </div>
     </div>
   );

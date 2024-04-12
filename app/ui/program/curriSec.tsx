@@ -24,6 +24,7 @@ export default function CurriculumSec() {
         console.error("Error fetching courses: ", error);
       }
     };
+
     getCourses();
   }, []);
 
@@ -31,6 +32,26 @@ export default function CurriculumSec() {
     console.log(data.course.modules);
   }, [data]);
 
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    username: "",
+    selectedCourses: [],
+  });
+  useEffect(() => {
+    let str = localStorage.getItem("user");
+    if (str != null && str.length > 0) {
+      try {
+        const getData = async () => {
+          const response = await axios.get(apiLink + "/user/" + str);
+          setUser(response.data.user);
+        };
+        getData();
+      } catch {
+        console.log("No user with this record exists");
+      }
+    }
+  }, []);
   return (
     <div className="mx-auto my-8 sm:my-20 px-2 max-w-6xl">
       <div className="flex flex-col items-start">
@@ -56,6 +77,8 @@ export default function CurriculumSec() {
               arr={[4, 12, course.length]}
               vid={course.videos}
               asg={course.assignments}
+              id={course._id}
+              user={user}
             />
           ))}
         </div>
@@ -76,6 +99,8 @@ function Box({
   link,
   vid,
   asg,
+  id,
+  user,
 }: {
   imgSrc: string;
   title: string;
@@ -84,6 +109,8 @@ function Box({
   link: string;
   vid: any;
   asg: any;
+  id: any;
+  user: any;
 }) {
   let arrTemp: any[] = [];
   for (let i = 0; i < 3; i++) {
@@ -118,36 +145,50 @@ function Box({
       </div>
       <div className="p-2 sm:p-6 text-[#444B58]">
         <h3 className="text-4xl mb-4 text-[#444B58]">{title}</h3>
-            <div className="flex w-full flex-row justify-between items-center">
-              <div className="flex items-center gap-2 sm:gap-6">
-              <span className="flex gap-2">
-                {" "}
-                <Image
-                  className="grayscale"
-                  src={arrSrc[0]}
-                  width="21"
-                  height="21"
-                  alt="icons"
-                />
-                {vid.length} Lessons
-              </span>
-              <span className="flex gap-2">
-                {" "}
-                <Image
-                  className="grayscale"
-                  src={arrSrc[2]}
-                  width="20"
-                  height="20"
-                  alt="icons"
-                />
-                {asg.length} Assignments
-              </span>
-              </div>
-              <Link
-            href={link}
-            className="flex mx-4 hover:text-[#078181] hover:bg-transparent justify-center items-center py-1 px-4 font-light text-2xl text-white bg-[#078181] rounded-full duration-300 border-2 border-[#078181] hover:shadow-lg">Start</Link>
-            </div>
-          
+        <div className="flex w-full flex-row justify-between items-center">
+          <div className="flex items-center gap-2 sm:gap-6">
+            <span className="flex gap-2">
+              {" "}
+              <Image
+                className="grayscale"
+                src={arrSrc[0]}
+                width="21"
+                height="21"
+                alt="icons"
+              />
+              {vid.length} Lessons
+            </span>
+            <span className="flex gap-2">
+              {" "}
+              <Image
+                className="grayscale"
+                src={arrSrc[2]}
+                width="20"
+                height="20"
+                alt="icons"
+              />
+              {asg.length} Assignments
+            </span>
+          </div>
+          {"65dadfed4f55cc9363c750e4" !== user?.selectedCourses[0]?.courseId ? (
+            <button
+              className="flex mx-4 hover:text-[#078181] hover:bg-transparent justify-center items-center py-1 px-4 font-light text-2xl text-white bg-[#078181] rounded-full duration-300 border-2 border-[#078181] hover:shadow-lg"
+              onClick={() => {
+                alert("please pay for the cost to get access");
+              }}
+            >
+              Pay
+            </button>
+          ) : (
+            <Link
+              href={link}
+              className="flex mx-4 hover:text-[#078181] hover:bg-transparent justify-center items-center py-1 px-4 font-light text-2xl text-white bg-[#078181] rounded-full duration-300 border-2 border-[#078181] hover:shadow-lg"
+            >
+              Start
+            </Link>
+          )}
+        </div>
+
         <div className="text-sm">{desp}</div>
       </div>
     </div>
