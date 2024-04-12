@@ -10,7 +10,7 @@ import { BeatLoader } from "react-spinners";
 const arrList = ["lessons", "hours", "tasks"];
 const arrSrc = ["/Icons/play-circle.svg", "/Icons/time.svg", "Icons/tasks.svg"];
 
-export default function CurriculumSec() {
+export default function CurriculumSec({ user }: { user: any }) {
   const [data, setData] = useState({ course: { modules: [] } });
 
   useEffect(() => {
@@ -32,26 +32,26 @@ export default function CurriculumSec() {
     console.log(data.course.modules);
   }, [data]);
 
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    username: "",
-    selectedCourses: [],
-  });
-  useEffect(() => {
-    let str = localStorage.getItem("user");
-    if (str != null && str.length > 0) {
-      try {
-        const getData = async () => {
-          const response = await axios.get(apiLink + "/user/" + str);
-          setUser(response.data.user);
-        };
-        getData();
-      } catch {
-        console.log("No user with this record exists");
-      }
-    }
-  }, []);
+  // const [user, setUser] = useState({
+  //   name: "",
+  //   email: "",
+  //   username: "",
+  //   selectedCourses: [],
+  // });
+  // useEffect(() => {
+  //   let str = localStorage.getItem("user");
+  //   if (str != null && str.length > 0) {
+  //     try {
+  //       const getData = async () => {
+  //         const response = await axios.get(apiLink + "/user/" + str);
+  //         setUser(response.data.user);
+  //       };
+  //       getData();
+  //     } catch {
+  //       console.log("No user with this record exists");
+  //     }
+  //   }
+  // }, []);
   return (
     <div className="mx-auto my-8 sm:my-20 px-2 max-w-6xl">
       <div className="flex flex-col items-start">

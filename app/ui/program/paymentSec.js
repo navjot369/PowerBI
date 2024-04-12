@@ -10,70 +10,76 @@ import Link from "next/link";
 import { Router, useRouter } from "next/navigation";
 import axios from "axios";
 
-export default function PaymentSec() {
+export default function PaymentSec({ user }) {
   return (
     <div className="my-8 md:my-28 max-w-6xl mx-auto px-2">
-      <div className="flex flex-col items-center">
-        <h2 className="text-4xl text-center font-bold my-2">
-          Transform Your Lives
-        </h2>
-        <p className="w-full md:w-2/3 text-md text-center my-2">
-          Become a Part at Courses for Carrer. Do check the Pricing Page once
-          and read all the Instructions. The price charged Below is a token
-          Money for Help you and us!
-        </p>
-      </div>
-      <div className="flex justify-center items-center">
-        <Box
-          top="BI - The Next AI with Courses for careers"
-          desp=""
-          price={4999}
-          arrTick={[
-            "Bonuses upto ₹3000",
-            "Free Power BI Master Guides",
-            "Job Assitance to a BI Analyst",
-            "Power BI Templates to Lucky Winners",
-            "10 Days to a Power BI Expert",
-          ]}
-          arrMinus={[]}
-          arrPlus={[]}
-          courseId="65dadfed4f55cc9363c750e4"
-        />
-        {/* <Box
-          top="Pro"
-          desp="Nunc arcu et eget tellus nunc quis gravida est ullamcorper orci scelerisque."
-          price={30000}
-          arrTick={[
-            "Proin gravida nibh vel velit auctor",
-            "Bibendum auctor nisi elit consequat",
-            "Ipsum nec sagittis sem nibh elit",
-            "Sollicitudin lorem quis id",
-            "Duis sed odio sit amet",
-            "Orci sit gravida vestibulum",
-            "Pretium nibh lobortis egestas",
-            "Dolor purus tincidunt",
-          ]}
-          arrMinus={[]}
-          arrPlus={[]}
-        />
-        <Box
-          top="Team"
-          desp="Nunc arcu et eget tellus nunc quis gravida est ullamcorper orci scelerisque."
-          price={50000}
-          arrTick={[
-            "Proin gravida nibh vel velit auctor",
-            "Bibendum auctor nisi elit consequat",
-            "Ipsum nec sagittis sem nibh elit",
-            "Sollicitudin lorem quis id",
-            "Duis sed odio sit amet",
-            "Orci sit gravida vestibulum",
-            "Pretium nibh lobortis egestas",
-            "Dolor purus tincidunt",
-          ]}
-          arrMinus={[]}
-          arrPlus={["Sem cursus proin", "Condimentum morbi"]}
-        /> */}
-      </div>
+      {"65dadfed4f55cc9363c750e4" !== user?.selectedCourses[0]?.courseId ? (
+        <div>
+          <div className="flex flex-col items-center">
+            <h2 className="text-4xl text-center font-bold my-2">
+              Transform Your Lives
+            </h2>
+            <p className="w-full md:w-2/3 text-md text-center my-2">
+              Become a Part at Courses for Carrer. Do check the Pricing Page
+              once and read all the Instructions. The price charged Below is a
+              token Money for Help you and us!
+            </p>
+          </div>
+          <div className="flex justify-center items-center">
+            <Box
+              top="BI - The Next AI with Courses for careers"
+              desp=""
+              price={4999}
+              arrTick={[
+                "Bonuses upto ₹3000",
+                "Free Power BI Master Guides",
+                "Job Assitance to a BI Analyst",
+                "Power BI Templates to Lucky Winners",
+                "10 Days to a Power BI Expert",
+              ]}
+              arrMinus={[]}
+              arrPlus={[]}
+              courseId="65dadfed4f55cc9363c750e4"
+            />
+            {/* <Box
+            top="Pro"
+            desp="Nunc arcu et eget tellus nunc quis gravida est ullamcorper orci scelerisque."
+            price={30000}
+            arrTick={[
+              "Proin gravida nibh vel velit auctor",
+              "Bibendum auctor nisi elit consequat",
+              "Ipsum nec sagittis sem nibh elit",
+              "Sollicitudin lorem quis id",
+              "Duis sed odio sit amet",
+              "Orci sit gravida vestibulum",
+              "Pretium nibh lobortis egestas",
+              "Dolor purus tincidunt",
+            ]}
+            arrMinus={[]}
+            arrPlus={[]}
+          />
+          <Box
+            top="Team"
+            desp="Nunc arcu et eget tellus nunc quis gravida est ullamcorper orci scelerisque."
+            price={50000}
+            arrTick={[
+              "Proin gravida nibh vel velit auctor",
+              "Bibendum auctor nisi elit consequat",
+              "Ipsum nec sagittis sem nibh elit",
+              "Sollicitudin lorem quis id",
+              "Duis sed odio sit amet",
+              "Orci sit gravida vestibulum",
+              "Pretium nibh lobortis egestas",
+              "Dolor purus tincidunt",
+            ]}
+            arrMinus={[]}
+            arrPlus={["Sem cursus proin", "Condimentum morbi"]}
+          /> */}
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
