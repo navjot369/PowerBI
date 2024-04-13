@@ -80,11 +80,11 @@ export default function Page({ params }: { params: any }) {
             <h2 className="text-lg font-medium mb-2">
               {question.questionText}
             </h2>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap flex-col text-left">
               {question.options.map((option: any) => {
                 const isSelected = userAnswers[question._id] === option;
                 const isCorrect = option === question.correctAnswer;
-                let buttonClass = "m-2 p-2 border bg-gray-200";
+                let buttonClass = "m-2 p-2 border text-left w-full bg-gray-200";
                 if (isSelected && !submitted) {
                   buttonClass += " bg-blue-400 text-white";
                 } else if (submitted) {
@@ -117,13 +117,12 @@ export default function Page({ params }: { params: any }) {
         {!submitted && (
           <button
             onClick={handleSubmit}
-            className="bg-blue-500 text-white py-2 px-4 rounded-md mt-4"
+            className="bg-[--pc] text-white py-2 px-4 mb-4 rounded-md mt-4"
           >
             Submit
           </button>
         )}
       </div>
-      <div className="w-full my-11 relative pt-[50%]"></div>
     </div>
   );
 }
