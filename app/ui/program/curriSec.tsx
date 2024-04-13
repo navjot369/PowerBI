@@ -171,14 +171,12 @@ function Box({
             </span>
           </div>
           {"65dadfed4f55cc9363c750e4" !== user?.selectedCourses[0]?.courseId ? (
-            <button
+            <Link
+              href={link}
               className="flex mx-4 hover:text-[#078181] hover:bg-transparent justify-center items-center py-1 px-4 font-light text-2xl text-white bg-[#078181] rounded-full duration-300 border-2 border-[#078181] hover:shadow-lg"
-              onClick={() => {
-                alert("please pay for the cost to get access");
-              }}
             >
-              Pay
-            </button>
+              Start
+            </Link>
           ) : (
             <Link
               href={link}

@@ -106,7 +106,9 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     </div>
   ));
   //payment starts here
-  const amount = 5000;
+  // const amount = 5000;
+  const [amount, setamount] = useState(5000);
+
   const currency = "INR";
   const receiptId = "qwsaq1";
 
@@ -118,7 +120,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     const response = await fetch(apiLink + "/pay/order", {
       method: "POST",
       body: JSON.stringify({
-        Amount,
+        amount,
         currency,
         receipt: receiptId,
       }),
@@ -127,11 +129,11 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       },
     });
     const order = await response.json();
-    console.log(order, process.env.NEXT_PUBLIC_KEY_ID);
+    console.log(order, "order");
 
     var options = {
       key: process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
-      Amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      amount, // amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency,
       name: "Courses For Career", //your business name
       description: "Purchase Course",
@@ -196,7 +198,6 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
       setPaymentStatus(true);
     }
   };
-  const [Amount, setAmount] = useState(price);
   const [Code, setCode] = useState("");
   const [CodeSuccess, setCodeSuccess] = useState(false);
   const checkDiscount = () => {
@@ -206,7 +207,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     } else {
       if (Code === "cfc50") {
         setCodeSuccess(true);
-        setAmount(parseInt(Amount / 2));
+        setamount(parseInt(amount / 2));
       }
     }
   };
@@ -254,7 +255,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           {/* <span className="text-3xl line-through text-gray-500">
             &#8377; 4999
           </span>{" "} */}
-          &#8377; {Amount}
+          &#8377; {amount}
         </h3>
       </div>
       <div className="px-4 py-8">
@@ -262,11 +263,11 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         {minusTemp}
         {plusTemp}
       </div>
-      <div class="px-4 py-4 flex">
+      <div class="px-4 py-4 flex flex-wrap box-border">
         <input
           type="text"
           placeholder="hello"
-          class="max-h-[50px] box-border border border-gray-300 rounded "
+          class="h-[50px] box-border border px-2 border-gray-300 rounded "
           value={Code}
           onChange={(e) => {
             setCode(e.target.value);
