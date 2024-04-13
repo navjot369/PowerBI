@@ -4,6 +4,8 @@ import { useState, useEffect, useContext } from "react";
 import { usePathname } from "next/navigation";
 import { BeatLoader } from "react-spinners";
 import Link from "next/link";
+import AppLogo from "@/app/ui/logo";
+import Image from "next/image";
 
 export default function Page({ params }: { params: any }) {
   const course: any = useContext(CourseContext);
@@ -33,18 +35,56 @@ export default function Page({ params }: { params: any }) {
   return (
     <div className="w-full pt-24 grid grid-cols-1 items-start justify-start px-11 relative">
       {/* Blur effect overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-95 flex justify-center items-center z-50">
-        <div className="text-black text-center flex justify-center items-center gap-5 flex-col">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Yellow_padlock.svg/120px-Yellow_padlock.svg.png"
-            className="w-[60px] h-[60px]"
-          />
+      <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-100 flex justify-around items-center z-50 flex-col">
+        <div className="flex flex-col w-full items-center ">
+          <div className="text-black w-full text-center flex justify-center items-center gap-4 flex-col">
+            <Image
+              src="/logo_blacktext.png"
+              width={300}
+              height={300}
+              className=" py-2 shrink-0"
+              alt="Placed logo"
+            />
+            <p className="text-3xl mb-5  font-bold text-black">
+              We are Launching Soon
+            </p>
+          </div>
 
-          <p className="text-lg text-black">We are launching soon...</p>
+          <div className="flex gap-5 m-4">
+            <div className="rounded-md p-2 bg-[--pc] text-white font-bold cursor-pointer">
+              <Link href="/contact">Contact Us</Link>
+            </div>
+            <div className="rounded-lg p-2 bg-[--pc] text-white font-bold">
+              <Link href="/">About Us</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-row align-center justify-center w-full">
+            <Link href="https://www.linkedin.com/company/coursesforcareers-dot-tech/">
+              <Image
+                src="/Icons/linkedin.svg"
+                width="50"
+                height="50"
+                className="w-8 h-8 mr-2"
+                alt="Social media Logo"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/coursesforcareers.tech?igsh=a2VoYmlrdXdsMHRr">
+              <Image
+                src="/Icons/instagram.png"
+                width="50"
+                height="50"
+                className="w-8 h-8 mr-2"
+                alt="Social media Logo"
+              />
+            </Link>
+          </div>
+        </div>
+
+        <div>
+          <Image src="/wait.svg" width={500} height={500} alt="waiting" />
         </div>
       </div>
-
-    
 
       <div className="grid grid-cols-2 w-full bg-slate-200"></div>
       <h1 className="text-6xl font-bold">{videoData.title}</h1>
