@@ -107,7 +107,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
   ));
   //payment starts here
   // const amount = 5000;
-  const [amount, setamount] = useState(5000);
+  const [amount, setamount] = useState(500);
 
   const currency = "INR";
   const receiptId = "qwsaq1";
