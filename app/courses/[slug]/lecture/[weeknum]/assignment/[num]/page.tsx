@@ -86,7 +86,7 @@ export default function Page({ params }: { params: any }) {
                 const isCorrect = option === question.correctAnswer;
                 let buttonClass = "m-2 p-2 border text-left w-full bg-gray-200";
                 if (isSelected && !submitted) {
-                  buttonClass += " bg-blue-400 text-white";
+                  buttonClass += " bg-yellow-400 text-white";
                 } else if (submitted) {
                   buttonClass += isCorrect
                     ? " bg-green-500 text-white"
