@@ -107,9 +107,9 @@ export default function Page({ params }: { params: any }) {
           </div>
         ))}
         {submitted && (
-          <div>
-            <h2 className="text-lg font-medium mb-2">Your Score:</h2>
-            <p>
+          <div className="w-full bg-[--pc] p-2 flex gap-4 items-baseline">
+            <h2 className="text-lg text-white font-bold">Your Score:</h2>
+            <p className="mb-4 text-white animate-bounce">
               {calculateScore()} / {AssignData.questions.length}
             </p>
           </div>
