@@ -220,7 +220,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           onClick={() => setPaymentStatus(false)}
         >
           <div
-            className="w-full mx-1 md:w-1/2 h-1/2 bg-white rounded-3xl border-2 border-[##3091a4] relative flex flex-col justify-center items-center py-4"
+            className="w-full mx-1 md:w-1/2 bg-white rounded-3xl border-2 border-[##3091a4]  flex flex-col justify-center items-center py-8 z-50 "
             onClick={(e) => {
               e.stopPropagation();
             }}

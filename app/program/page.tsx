@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import NavMenu from "../ui/home/navbar";
 import HeroSec from "../ui/program/heroSec";
+import Tick from "@/app/ui/payment_success/tickAnim";
+
 import StatSec from "../ui/program/statSec";
 import CurriculumSec from "../ui/program/curriSec";
 import VideoSec from "../ui/program/videoSec";
@@ -42,6 +44,7 @@ export default function Page() {
   }, []);
   return (
     <div>
+      {/* <Tick /> */}
       <NavMenu login="Simran" />
       <HeroSec />
       <StatSec />

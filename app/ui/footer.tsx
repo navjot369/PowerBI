@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4  lg:items-start">
             <Link
               href="/"
-              className="text-white z-100 hover:text-[#ff9635] block cursor-pointer"
+              className="text-white hover:text-[#ff9635] block cursor-pointer"
             >
               Home
             </Link>
