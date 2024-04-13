@@ -1,6 +1,6 @@
 "use client";
 import CourseContext from "@/app/courses/contexts";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -10,6 +10,7 @@ export default function Page({ params }: { params: any }) {
   let AssignData: any;
   let path = usePathname();
   let link = "/courses/" + params.slug + "/module/" + params.weeknum;
+
   if (Object.keys(course).length === 0) {
     return (
       <div className="fixed top-0  right-0 w-full h-[100vh] font-bold text-4xl flex bg-white justify-center items-center">
@@ -28,20 +29,42 @@ export default function Page({ params }: { params: any }) {
       );
     }
   }
-  console.log(AssignData);
+
+  // Initialize userAnswers state with default values
+  const [userAnswers, setUserAnswers] = useState<Record<string, string | null>>(
+    {}
+  );
+  // Initialize submitted state
+  const [submitted, setSubmitted] = useState(false);
+
+  // Handle user's option selection
+  const handleOptionSelect = (questionId: string, option: string) => {
+    // Allow option selection only if not submitted
+    if (!submitted) {
+      setUserAnswers({ ...userAnswers, [questionId]: option });
+    }
+  };
+
+  // Calculate the user's score
+  const calculateScore = (): number => {
+    let score = 0;
+    // Loop through each question
+    AssignData.questions.forEach((question: any) => {
+      // Check if the user's answer matches the correct answer
+      if (userAnswers[question._id] === question.correctAnswer) {
+        score++;
+      }
+    });
+    return score;
+  };
+
+  // Function to handle submission
+  const handleSubmit = () => {
+    setSubmitted(true);
+  };
+
   return (
     <div className="w-full pt-24 grid grid-cols-1 items-start justify-start px-11 relative">
-      <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-95 flex justify-center items-center z-50">
-        <div className="text-black text-center flex justify-center items-center gap-5 flex-col">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Yellow_padlock.svg/120px-Yellow_padlock.svg.png"
-            className="w-[60px] h-[60px]"
-          />
-
-          <p className="text-lg text-black">We are launching soon...</p>
-        </div>
-      </div>
-
       <h1 className="text-6xl font-bold">{AssignData.title}</h1>
       <div className="bg-slate-200 py-1 px-4 rounded-lg mt-11 flex items-center">
         <Link href={link}>{course.title}</Link>
@@ -49,6 +72,56 @@ export default function Page({ params }: { params: any }) {
         <Link href={link}>{module.title}</Link>
         <span className="text-lg mx-2 font-bold text-[--pc]">&gt;</span>
         <Link href="">{AssignData.title}</Link>
+      </div>
+
+      <div className="container mx-auto mt-10">
+        {AssignData.questions.map((question: any) => (
+          <div key={question._id} className="mb-4">
+            <h2 className="text-lg font-medium mb-2">
+              {question.questionText}
+            </h2>
+            <div className="flex flex-wrap">
+              {question.options.map((option: any) => {
+                const isSelected = userAnswers[question._id] === option;
+                const isCorrect = option === question.correctAnswer;
+                let buttonClass = "m-2 p-2 border bg-gray-200";
+                if (isSelected && !submitted) {
+                  buttonClass += " bg-blue-400 text-white";
+                } else if (submitted) {
+                  buttonClass += isCorrect
+                    ? " bg-green-500 text-white"
+                    : " bg-red-500 text-white";
+                }
+                return (
+                  <button
+                    key={option}
+                    className={buttonClass}
+                    onClick={() => handleOptionSelect(question._id, option)}
+                    disabled={submitted}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+        {submitted && (
+          <div>
+            <h2 className="text-lg font-medium mb-2">Your Score:</h2>
+            <p>
+              {calculateScore()} / {AssignData.questions.length}
+            </p>
+          </div>
+        )}
+        {!submitted && (
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-500 text-white py-2 px-4 rounded-md mt-4"
+          >
+            Submit
+          </button>
+        )}
       </div>
       <div className="w-full my-11 relative pt-[50%]"></div>
     </div>
