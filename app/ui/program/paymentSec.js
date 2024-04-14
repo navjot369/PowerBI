@@ -25,9 +25,9 @@ export default function PaymentSec({ user }) {
               token Money for Help you and us!
             </p>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-around items-center gap-5 flex-wrap md:flex-nowrap">
             <Box
-              top="BI - The Next AI with Courses for careers"
+              top="Power BI - with Courses for careers"
               desp=""
               price={4999}
               arrTick={[
@@ -40,6 +40,23 @@ export default function PaymentSec({ user }) {
               arrMinus={[]}
               arrPlus={[]}
               courseId="65dadfed4f55cc9363c750e4"
+              disabled={false}
+            />
+            <Box
+              top="Power BI Question Bank"
+              desp=""
+              price={5499}
+              arrTick={[
+                "Bonuses upto ₹3000",
+                "Free Power BI Master Guides",
+                "Job Assitance to a BI Analyst",
+                "Power BI Templates to Lucky Winners",
+                "10 Days to a Power BI Expert",
+              ]}
+              arrMinus={[]}
+              arrPlus={[]}
+              courseId="65dadfed4f55cc9363c750e4"
+              disabled={true}
             />
             {/* <Box
             top="Pro"
@@ -84,7 +101,16 @@ export default function PaymentSec({ user }) {
   );
 }
 
-function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
+function Box({
+  top,
+  desp,
+  price,
+  arrTick,
+  arrMinus,
+  arrPlus,
+  courseId,
+  disabled,
+}) {
   const [PaymentSuccess, setPaymentStatus] = useState(false);
   const router = useRouter();
   const tickTemp = arrTick.map((item, ind) => (
@@ -107,7 +133,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
   ));
   //payment starts here
   // const amount = 5000;
-  const [amount, setamount] = useState(4999);
+  const [amount, setamount] = useState(price);
 
   const currency = "INR";
   const receiptId = "qwsaq1";
@@ -285,23 +311,49 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         {plusTemp}
       </div>
       <div class="px-4 py-4 flex flex-wrap box-border">
-        <input
-          type="text"
-          placeholder="hello"
-          class="h-[50px] box-border border px-2 border-gray-300 rounded "
-          value={Code}
-          onChange={(e) => {
-            setCode(e.target.value);
-          }}
-        />
-        <button
-          class="p-2 bg-[#3091a4] px-6 text-white rounded hover:bg-[#3091a4]"
-          onClick={() => {
-            checkDiscount();
-          }}
-        >
-          apply coupon
-        </button>
+        {disabled ? (
+          <>
+            <input
+              type="text"
+              placeholder="we are coming soon"
+              class="h-[50px] box-border border px-2 border-gray-300 rounded "
+              value={Code}
+              disabled
+              onChange={(e) => {
+                setCode(e.target.value);
+              }}
+            />
+            <button
+              class="p-2 bg-[#3091a4] px-6 text-white rounded hover:bg-[#3091a4]"
+              onClick={() => {
+                checkDiscount();
+              }}
+              disabled
+            >
+              apply coupon
+            </button>
+          </>
+        ) : (
+          <>
+            <input
+              type="text"
+              placeholder="we are coming soon"
+              class="h-[50px] box-border border px-2 border-gray-300 rounded "
+              value={Code}
+              onChange={(e) => {
+                setCode(e.target.value);
+              }}
+            />
+            <button
+              class="p-2 bg-[#3091a4] px-6 text-white rounded hover:bg-[#3091a4]"
+              onClick={() => {
+                checkDiscount();
+              }}
+            >
+              apply coupon
+            </button>
+          </>
+        )}
       </div>
 
       {CodeSuccess ? (
@@ -333,14 +385,20 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           test
         </button> */}
 
-        <button
-          onClick={() => {
-            paymentHandler();
-          }}
-          className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
-        >
-          Pay
-        </button>
+        {disabled ? (
+          <button className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300">
+            We are coming soon..
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              paymentHandler();
+            }}
+            className="py-2 px-4 rounded-full border-2 border-black pr-6 group-hover:pr-4 duration-300"
+          >
+            Pay
+          </button>
+        )}
       </div>
     </div>
   );
