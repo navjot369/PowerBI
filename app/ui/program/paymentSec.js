@@ -107,7 +107,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
   ));
   //payment starts here
   // const amount = 5000;
-  const [amount, setamount] = useState(500);
+  const [amount, setamount] = useState(4999);
 
   const currency = "INR";
   const receiptId = "qwsaq1";
@@ -120,7 +120,7 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     const response = await fetch(apiLink + "/pay/order", {
       method: "POST",
       body: JSON.stringify({
-        amount,
+        amount: amount * 100,
         currency,
         receipt: receiptId,
       }),
@@ -199,15 +199,25 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
     }
   };
   const [Code, setCode] = useState("");
+
   const [CodeSuccess, setCodeSuccess] = useState(false);
+  const [CodeFail, setCodeFail] = useState(false);
+
   const checkDiscount = () => {
     if (Code === "") {
-      alert("please enter valid code");
+      // alert("please enter valid code");
+      setCodeFail(true);
+      setamount(4999);
       setCodeSuccess(false);
     } else {
       if (Code === "cfc50") {
+        setCodeFail(false);
         setCodeSuccess(true);
-        setamount(parseInt(amount / 2));
+        setamount(500);
+      } else {
+        setCodeFail(true);
+        setamount(4999);
+        setCodeSuccess(false);
       }
     }
   };
@@ -255,7 +265,18 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
           {/* <span className="text-3xl line-through text-gray-500">
             &#8377; 4999
           </span>{" "} */}
-          &#8377; {amount}
+          {amount == 500 ? (
+            <div>
+              {" "}
+              <span className="text-gray-400 line-through">
+                {" "}
+                &#8377; 4999
+              </span>{" "}
+              <span className=""> &#8377; 500</span>{" "}
+            </div>
+          ) : (
+            <p>&#8377; 4999</p>
+          )}
         </h3>
       </div>
       <div className="px-4 py-8">
@@ -287,6 +308,11 @@ function Box({ top, desp, price, arrTick, arrMinus, arrPlus, courseId }) {
         <div className="text-green-500  text-sm px-6">
           Successfully applied code
         </div>
+      ) : (
+        <></>
+      )}
+      {CodeFail ? (
+        <div className="text-red-500  text-sm px-6">Code not valid</div>
       ) : (
         <></>
       )}
