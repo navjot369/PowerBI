@@ -305,7 +305,7 @@ function Box({
               <span className=""> &#8377; 500</span>{" "}
             </div>
           ) : (
-            <p>&#8377; 4999</p>
+            <p>&#8377; {disabled ? "5499" : "4999"}</p>
           )}
         </h3>
       </div>
