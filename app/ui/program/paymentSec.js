@@ -240,6 +240,10 @@ function Box({
         setCodeFail(false);
         setCodeSuccess(true);
         setamount(500);
+      } else if (Code == "testcfc#123") {
+        setCodeFail(false);
+        setCodeSuccess(true);
+        setamount(5);
       } else {
         setCodeFail(true);
         setamount(4999);
