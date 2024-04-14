@@ -90,7 +90,7 @@ export default function Page({ params }: { params: any }) {
                 } else if (submitted) {
                   buttonClass += isCorrect
                     ? " bg-green-500 text-white"
-                    : " bg-red-500 text-white";
+                    : " bg-gray-200 text-black";
                 }
                 return (
                   <button
