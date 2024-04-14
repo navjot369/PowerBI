@@ -256,7 +256,7 @@ function Box({
     <div className="w-full md:w-1/2 mt-10 rounded-2xl overflow-hidden shadow-lg relative pb-24 z-0">
       {PaymentSuccess && (
         <div
-          className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-[50] bg-slate-500 bg-opacity-40"
+          className="fixed flex justify-center items-center w-screen h-screen top-0 left-0 z-50 bg-slate-500 bg-opacity-40"
           onClick={() => setPaymentStatus(false)}
         >
           <div
