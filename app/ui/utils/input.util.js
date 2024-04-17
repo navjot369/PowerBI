@@ -1,12 +1,8 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 
-export default function InputEle(
-  {
-    refer, value, handleChange, type, name
-  }
-) {
+export default function InputEle({ refer, value, handleChange, type, name }) {
   const [inputType, setType] = useState(type);
 
   return (
@@ -24,25 +20,34 @@ export default function InputEle(
           disabled={false}
           required
         ></input>
-        <label className="absolute left-4 top-0 duration-300 text-9xl" htmlFor={name}>
+        <label
+          className="absolute left-4 top-0 duration-300 text-9xl"
+          htmlFor={name}
+        >
           {name.charAt(0).toUpperCase() + name.substr(1).toLowerCase()}
         </label>
-        {type == "password" &&
+        {type == "password" && (
           <div className="flex justify-center items-center h-full absolute top-0 right-2 duration-500">
-          {inputType == "password" ?
-            <Image
-              src="/Icons/eye-open.svg" width="100" height="100"
-              className="cursor-default w-8"
-              onClick={() => setType("text")} />
-            :
-            <Image
-              src="/Icons/eye-close.svg" width="100" height="100"
-              className="cursor-default w-8"
-              onClick={() => setType("password")} />
-        }
+            {inputType == "password" ? (
+              <Image
+                src="/Icons/eye-open.svg"
+                width="100"
+                height="100"
+                className="cursor-default w-8"
+                onClick={() => setType("text")}
+              />
+            ) : (
+              <Image
+                src="/Icons/eye-close.svg"
+                width="100"
+                height="100"
+                className="cursor-default w-8"
+                onClick={() => setType("password")}
+              />
+            )}
           </div>
-        }
+        )}
       </div>
     </div>
-  )
+  );
 }
